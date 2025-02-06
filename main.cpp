@@ -3,12 +3,24 @@
 */
 
 #include <iostream>
+#include "zip_code_buffer.h"
 
-using namespace std;
+int main() {
+    ZipCodeBuffer buffer;
+    ZipCodeProcessor processor;
 
-int main()
-{
-	cout << "Running...\n";
+    // Load the CSV file
+    if (!buffer.loadCSV("zip_codes.csv")) {
+        std::cerr << "Failed to load CSV file!" << std::endl;
+        return 1; // Exit with error code
+    }
 
-	return 0;
+    // Get records and process them
+    std::vector<ZipCodeRecord> records = buffer.getRecords();
+    processor.organizeByState(records);
+    
+    // Print the results
+    processor.printResults();
+
+    return 0;
 }
