@@ -1,6 +1,11 @@
 /** 
-* Group 5 - Process zip codes from csv file
-*/
+*	Group 5 - Process zip codes from csv file 
+    @file array.cpp
+    @author Kiran Kadariya, Sagar Neupane, Kevin G, Abdul
+    @brief Implementation file
+    @date 02-17-2025
+  */  
+
 
 // zip_code_buffer.cpp (Implementation File)
 // This file contains the implementation of the ZipCodeBuffer and ZipCodeProcessor classes.

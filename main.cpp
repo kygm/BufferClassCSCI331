@@ -1,6 +1,12 @@
-/*
+/** 
 	Group 5 - Process zip codes from csv file
-*/
+    
+    @file main.cpp
+    @author Kiran Kadariya, Sargar Neupane, Kevin G, Abdul 
+    @date 02-17-2025
+    
+********/
+
 
 #include <iostream>
 #include "zip_code_buffer.h"
