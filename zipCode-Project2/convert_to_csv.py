@@ -27,12 +27,12 @@ df_randomized = df_randomized.drop(columns=['RandomColumn'])
 df_randomized.to_excel('randomized.xlsx', index=False)
 
 # Convert original XLSX to CSV
-df_original.to_csv('zip_codes.csv', index=False)
+df_original.to_csv('zipCodes.csv', index=False)
 
 # Convert row-randomized XLSX to CSV
 df_randomized.to_csv('randomized.csv', index=False)
 
 print("Files generated successfully:")
-print("- zip_codes.csv")
+print("- zipCodes.csv")
 print("- randomized.xlsx")
 print("- randomized.csv")
