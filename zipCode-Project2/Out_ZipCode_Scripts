@@ -1,18 +1,21 @@
 Script started on 2025-03-19 17:41:06+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="122" LINES="15"]
-[0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2 [0;36m([1;31mmaster[0;36m) [0m$ ./zipcode -Z54155 -Z66612 -Z90210 _[K-11229[K[K[K[K[KZ11229 _[K-Z00 000 _[K-5[K2115[K[K[K[KZ211[K[K1157 -12417 [K[K[K[K[K[Kz[KZ@11[K[K[K21157 [K, [K[K -Z30094 -56301[K[K[K[K[KZ56301 -Z11121 -62[K[KZ62895[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit logrestore us_postal_codes.csv[Kstatus restore us_postal_codes.csvlog[K[Kg++ main.cpp Buffer.cpp -o zipcode 
+[0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2 [0;36m([1;31mmaster[0;36m) [0m$ ./zipcode -Z54155 -Z66612 -Z90210 _[K-11229[K[K[K[K[KZ11229 _[K-Z00 
+000 _[K-5[K2115[K[K[K[KZ211[K[K1157 -12417 [K[K[K[K[K[Kz[KZ@11[K[K[K21157 [K, [K[K -Z30094 -56301[K[K[K[K[KZ56301 -Z11121 -62[K[KZ62895[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgit logrestore us_postal_codes.csv[Kstatus restore us_postal_codes.csvlog[K[Kg++ main.cpp Buffer.cpp -o zipcode 
 [0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2 [0;36m([1;31mmaster[0;36m) [0m$ ./zipcode -Z54155 -Z66612 -Z90210 -Z11229 -Z00000 -Z21157 -Z21157 -Z30094 -Z56301 -Z11121 -Z62895
 Not Found: 54155
-Not Found: 66612
+Found: 66612
 Not Found: 90210
 Not Found: 11229
 Not Found: 00000
-Not Found: 21157
-Not Found: 21157
+Found: 21157
+Not Found: 21111
 Not Found: 30094
 Not Found: 56301
-Not Found: 11121
-Not Found: 62895
+Found: 11121
+Found: 62895
 [0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2 [0;36m([1;31mmaster[0;36m) [0m$ doxygen --version
 1.8.17
 [0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2 [0;36m([1;31mmaster[0;36m) [0m$ doxygen -g Doxyfile
@@ -618,7 +621,8 @@ uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb>
 Output written on refman.pdf (9 pages, 31354 bytes).
 Transcript written on refman.log.
 [0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2/latex [0;36m([1;31mmaster[0;36m) [0m$ git [K[K[K[Kgit [K[K[K[K " [Kad[K[K[K[Kadd [K[K[K[Kadd . [K[K[K[K[K[KComm[K[K[K[Kgit f[Kadd .
-[0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2/latex [0;36m([1;31mmaster[0;36m) [0m$ git commit -m " [KAdd ll the [K[K[K[K[K[K[Kall file c[K>cpp[K[K[K[K.cpp[K[K[K[K[K[K[K[K[K.cpp [K, .h [K[K[K[K[K[K[K[K[K[K C++ file and d[Kde[Koxy gen files " 
+[0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2/latex [0;36m([1;31mmaster[0;36m) [0m$ git commit -m " [KAdd ll the [K[K[K[K[K[K[Kall file c[K>cpp[K[K[K[K.cpp[K[K[K[K[K[K[K[K[K.cpp [K, .h [K[K[K[K[K[K[K[K[K[K C++ file and d[Kde[Koxy 
+gen files " 
 [master 6872a1c] Add all C++ file and doxygen files
  15 files changed, 4802 insertions(+)
  create mode 100644 zipCode-Project2/latex/Makefile
@@ -638,6 +642,32 @@ Transcript written on refman.log.
  create mode 100644 zipCode-Project2/latex/tabu_doxygen.sty
 [0;32m@kirankadariya [0m➜ [1;34m/workspaces/BufferClassCSCI331/zipCode-Project2/latex [0;36m([1;31mmaster[0;36m) [0m$ git push origin 
 Enumerating objects: 21, done.
-Counting objects:   4% (1/21)Counting objects:   9% (2/21)Counting objects:  14% (3/21)Counting objects:  19% (4/21)Counting objects:  23% (5/21)Counting objects:  28% (6/21)Counting objects:  33% (7/21)Counting objects:  38% (8/21)Counting objects:  42% (9/21)Counting objects:  47% (10/21)Counting objects:  52% (11/21)Counting objects:  57% (12/21)Counting objects:  61% (13/21)Counting objects:  66% (14/21)Counting objects:  71% (15/21)Counting objects:  76% (16/21)Counting objects:  80% (17/21)Counting objects:  85% (18/21)Counting objects:  90% (19/21)Counting objects:  95% (20/21)Counting objects: 100% (21/21)Counting objects: 100% (21/21), done.
+Counting objects:   4% (1/21)
+Counting objects:   9% (2/21)
+Counting objects:  14% (3/21)
+Counting objects:  19% (4/21)
+Counting objects:  23% (5/21)
+Counting objects:  28% (6/21)
+Counting objects:  33% (7/21)
+Counting objects:  38% (8/21)
+Counting objects:  42% (9/21)
+Counting objects:  47% (10/21)
+Counting objects:  52% (11/21)
+Counting objects:  57% (12/21)
+Counting objects:  61% (13/21)
+Counting objects:  66% (14/21)
+Counting objects:  71% (15/21)
+Counting objects:  76% (16/21)
+Counting objects:  80% (17/21)
+Counting objects:  85% (18/21)
+Counting objects:  90% (19/21)
+Counting objects:  95% (20/21)
+Counting objects: 100% (21/21)
+Counting objects: 100% (21/21), done.
 Delta compression using up to 2 threads
-Compressing objects:   5% (1/18)Compressing objects:  11% (2/18)Compressing objects:  16% (3/18)Compressing objects:  22% (4/18)Compressing objects:  27% (5/18)Compressing o
+Compressing objects:   5% (1/18)
+Compressing objects:  11% (2/18)
+Compressing objects:  16% (3/18)
+Compressing objects:  22% (4/18)
+Compressing objects:  27% (5/18)
+Compressing o
