@@ -1,1 +1,9 @@
 \indexentry{Buffer@{Buffer}|hyperpage}{3}
+\indexentry{Buffer@{Buffer}!pack@{pack}|hyperpage}{3}
+\indexentry{pack@{pack}!Buffer@{Buffer}|hyperpage}{3}
+\indexentry{Buffer@{Buffer}!readHeader@{readHeader}|hyperpage}{4}
+\indexentry{readHeader@{readHeader}!Buffer@{Buffer}|hyperpage}{4}
+\indexentry{Buffer@{Buffer}!unpack@{unpack}|hyperpage}{4}
+\indexentry{unpack@{unpack}!Buffer@{Buffer}|hyperpage}{4}
+\indexentry{Buffer@{Buffer}!writeHeader@{writeHeader}|hyperpage}{4}
+\indexentry{writeHeader@{writeHeader}!Buffer@{Buffer}|hyperpage}{4}

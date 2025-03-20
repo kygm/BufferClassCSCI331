@@ -3,4 +3,10 @@
 \contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Class Documentation}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Buffer Class Reference}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Detailed Description}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Member Function Documentation}{3}{subsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.1}pack()}{3}{subsubsection.2.1.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.2.2}readHeader()}{4}{subsubsection.2.1.2.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.3}unpack()}{4}{subsubsection.2.1.2.3}%
+\contentsline {subsubsection}{\numberline {2.1.2.4}writeHeader()}{4}{subsubsection.2.1.2.4}%
 \contentsline {chapter}{Index}{5}{section*.2}%

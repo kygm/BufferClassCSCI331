@@ -1,5 +1,29 @@
 \begin{theindex}
 
   \item {Buffer}, \hyperpage{3}
+    \subitem {pack}, \hyperpage{3}
+    \subitem {readHeader}, \hyperpage{4}
+    \subitem {unpack}, \hyperpage{4}
+    \subitem {writeHeader}, \hyperpage{4}
+
+  \indexspace
+
+  \item {pack}
+    \subitem {Buffer}, \hyperpage{3}
+
+  \indexspace
+
+  \item {readHeader}
+    \subitem {Buffer}, \hyperpage{4}
+
+  \indexspace
+
+  \item {unpack}
+    \subitem {Buffer}, \hyperpage{4}
+
+  \indexspace
+
+  \item {writeHeader}
+    \subitem {Buffer}, \hyperpage{4}
 
 \end{theindex}

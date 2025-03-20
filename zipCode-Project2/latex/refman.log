@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2025.2.11)  19 MAR 2025 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2025.2.11)  20 MAR 2025 02:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,19 +880,38 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 ]
 Chapter 2.
 (./classBuffer.tex
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 6
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 10
 .
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 12.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 6.
-)
-[3] [4
+(Font)              scaled to size 8.99994pt on input line 15.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 16.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 16.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 16.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 35.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 35.
+ [3]
+Underfull \hbox (badness 10000) detected at line 71
+[][][]
+ []
 
-] (./refman.ind [5
+) [4] (./refman.ind [5
+
 
 
 
@@ -903,24 +922,27 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 112CA6046F2D22C6BAF6C07B17778A3C;660.
+(rerunfilecheck)             Checksum: DDC57675591E265FA8D51FDFBE5FFA86;1779.
  ) 
 Here is how much of TeX's memory you used:
- 16363 strings out of 483183
- 237095 string characters out of 5966292
- 504563 words of memory out of 5000000
- 31065 multiletter control sequences out of 15000+600000
- 569403 words of font info for 61 fonts, out of 8000000 for 9000
+ 16444 strings out of 483183
+ 238125 string characters out of 5966292
+ 507699 words of memory out of 5000000
+ 31125 multiletter control sequences out of 15000+600000
+ 583939 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,11n,96p,938b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,96p,938b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (9 pages, 31354 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/he
+lvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8
+ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (9 pages, 65949 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
