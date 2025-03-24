@@ -1,29 +1,53 @@
 \begin{theindex}
 
-  \item {Buffer}, \hyperpage{3}
-    \subitem {pack}, \hyperpage{3}
-    \subitem {readHeader}, \hyperpage{4}
-    \subitem {unpack}, \hyperpage{4}
-    \subitem {writeHeader}, \hyperpage{4}
+  \item {Buffer}, \hyperpage{5}
+    \subitem {buffer}, \hyperpage{7}
+    \subitem {pack}, \hyperpage{5}
+    \subitem {readHeader}, \hyperpage{6}
+    \subitem {unpack}, \hyperpage{6}
+    \subitem {writeHeader}, \hyperpage{6}
+  \item {buffer}
+    \subitem {Buffer}, \hyperpage{7}
+  \item {Buffer.cpp}, \hyperpage{9}
+  \item {Buffer.h}, \hyperpage{9}
+
+  \indexspace
+
+  \item {convertToLengthIndicated}
+    \subitem {main.cpp}, \hyperpage{12}
+  \item {createIndex}
+    \subitem {main.cpp}, \hyperpage{12}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{13}
+  \item {main.cpp}, \hyperpage{11}
+    \subitem {convertToLengthIndicated}, \hyperpage{12}
+    \subitem {createIndex}, \hyperpage{12}
+    \subitem {main}, \hyperpage{13}
+    \subitem {writeIndexToFile}, \hyperpage{13}
 
   \indexspace
 
   \item {pack}
-    \subitem {Buffer}, \hyperpage{3}
+    \subitem {Buffer}, \hyperpage{5}
 
   \indexspace
 
   \item {readHeader}
-    \subitem {Buffer}, \hyperpage{4}
+    \subitem {Buffer}, \hyperpage{6}
 
   \indexspace
 
   \item {unpack}
-    \subitem {Buffer}, \hyperpage{4}
+    \subitem {Buffer}, \hyperpage{6}
 
   \indexspace
 
   \item {writeHeader}
-    \subitem {Buffer}, \hyperpage{4}
+    \subitem {Buffer}, \hyperpage{6}
+  \item {writeIndexToFile}
+    \subitem {main.cpp}, \hyperpage{13}
 
 \end{theindex}

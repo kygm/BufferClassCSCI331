@@ -1,3 +1,16 @@
+/**
+ * @file main.cpp
+ * @brief Converts CSV files to length-indicated format and creates primary key indices.
+ *
+ * This program processes CSV files to transform them into a length-indicated format.
+ * It then creates an index based on the primary key (Zip Code) and writes this index to a file.
+ * The program also supports searching for zip codes using the generated index.
+ *
+ * Usage:
+ * Run the program with optional command-line arguments to search for specific zip codes.
+ * Example: ./program -Z12345 -Z67890
+ */
+
 #include "Buffer.h"
 #include <fstream>
 #include <iostream>
@@ -6,7 +19,15 @@
 
 using namespace std;
 
-// Function to convert CSV to length-indicated format
+/**
+ * @brief Converts a CSV file to a length-indicated format.
+ *
+ * Reads data from the input CSV file, packs each line into a length-indicated format,
+ * and writes it to the output file.
+ *
+ * @param inputFile The name of the input CSV file.
+ * @param outputFile The name of the output file to store length-indicated records.
+ */
 void convertToLengthIndicated(const string &inputFile, const string &outputFile)
 {
     ifstream inFile(inputFile);
@@ -28,7 +49,15 @@ void convertToLengthIndicated(const string &inputFile, const string &outputFile)
     }
 }
 
-// Function to create a primary key index
+/**
+ * @brief Creates an index mapping primary keys (Zip Codes) to file offsets.
+ *
+ * Reads the CSV file and extracts the Zip Code from each record. Stores the file
+ * offset of each record in an unordered_map for fast lookup.
+ *
+ * @param filename The name of the file containing length-indicated records.
+ * @return An unordered_map containing Zip Code keys and their respective file offsets.
+ */
 unordered_map<string, size_t> createIndex(const string &filename)
 {
     unordered_map<string, size_t> index;
@@ -49,7 +78,14 @@ unordered_map<string, size_t> createIndex(const string &filename)
     return index;
 }
 
-// Function to write index to a file
+/**
+ * @brief Writes the created index to a file.
+ *
+ * Outputs the Zip Code and corresponding file offset to a specified file.
+ *
+ * @param index The unordered_map containing Zip Code keys and file offsets.
+ * @param filename The name of the output file where the index will be stored.
+ */
 void writeIndexToFile(const unordered_map<string, size_t> &index, const string &filename)
 {
     ofstream outFile(filename);
@@ -59,17 +95,31 @@ void writeIndexToFile(const unordered_map<string, size_t> &index, const string &
     }
 }
 
+/**
+ * @brief Main function to execute CSV conversion, indexing, and zip code lookup.
+ *
+ * Converts CSV files to length-indicated format, generates primary key indices,
+ * and supports searching for zip codes using the index.
+ *
+ * @param argc Number of command-line arguments.
+ * @param argv Command-line arguments.
+ * @return Exit status (0 on success, 1 on failure).
+ */
 int main(int argc, char *argv[])
 {
+    cout << "CSCI 331 Project 2.0\nConverting CSV files to length-indicated format and creating primary key indices...\n";
+
     // Convert CSV files to length-indicated format
-    convertToLengthIndicated("resources/zipCodes.csv", "output/original_length_indicated.txt");
+    convertToLengthIndicated("resources/zipCodes.csv", "output/ordered_length_indicated.txt");
     convertToLengthIndicated("resources/randomized.csv", "output/randomized_length_indicated.txt");
 
-    // Create and save primary key indexes
-    auto originalIndex = createIndex("output/original_length_indicated.txt");
-    writeIndexToFile(originalIndex, "output/original_index.txt");
+    cout << "Creating and saving primary key indices...\n";
 
-    auto randomizedIndex = createIndex("output/randomized_length_indicated.txt");
+    // Create and save primary key indices
+    unordered_map<string, size_t> orderedIndex = createIndex("output/ordered_length_indicated.txt");
+    writeIndexToFile(orderedIndex, "output/ordered_index.txt");
+
+    unordered_map<string, size_t> randomizedIndex = createIndex("output/randomized_length_indicated.txt");
     writeIndexToFile(randomizedIndex, "output/randomized_index.txt");
 
     // Handle command-line arguments
@@ -84,14 +134,16 @@ int main(int argc, char *argv[])
     {
         if (string(argv[i]).substr(0, 2) == "-Z")
         {
-            zipCodes.push_back(string(argv[i]).substr(2)); // Fix: Convert char* to string
+            zipCodes.push_back(string(argv[i]).substr(2)); // Extract Zip Code
         }
     }
 
+    cout << "\nSearching zipcodes in the indexed file..." << endl;
+
     // Search for Zip Codes
-    for (const auto &zipCode : zipCodes)
+    for (const string &zipCode : zipCodes)
     {
-        if (originalIndex.find(zipCode) != originalIndex.end())
+        if (orderedIndex.find(zipCode) != orderedIndex.end())
         {
             cout << "Found: " << zipCode << endl;
         }

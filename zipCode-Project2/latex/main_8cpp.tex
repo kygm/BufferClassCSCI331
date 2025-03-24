@@ -1,0 +1,155 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Converts CSV files to length-\/indicated format and creates primary key indices.  
+
+
+{\ttfamily \#include "{}Buffer.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a0b610e29c499d46a634eb62795a6d3f6}{convert\+To\+Length\+Indicated}} (const string \&input\+File, const string \&output\+File)
+\begin{DoxyCompactList}\small\item\em Converts a CSV file to a length-\/indicated format. \end{DoxyCompactList}\item 
+unordered\+\_\+map$<$ string, size\+\_\+t $>$ \mbox{\hyperlink{main_8cpp_aed3849f9a0d3dea3da2adac23c6cc56f}{create\+Index}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Creates an index mapping primary keys (Zip Codes) to file offsets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a3d82b453bb5a855fa5dab6631891839b}{write\+Index\+To\+File}} (const unordered\+\_\+map$<$ string, size\+\_\+t $>$ \&index, const string \&filename)
+\begin{DoxyCompactList}\small\item\em Writes the created index to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main function to execute CSV conversion, indexing, and zip code lookup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Converts CSV files to length-\/indicated format and creates primary key indices. 
+
+This program processes CSV files to transform them into a length-\/indicated format. It then creates an index based on the primary key (Zip Code) and writes this index to a file. The program also supports searching for zip codes using the generated index.
+
+Usage\+: Run the program with optional command-\/line arguments to search for specific zip codes. Example\+: ./program -\/Z12345 -\/Z67890 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0b610e29c499d46a634eb62795a6d3f6}\index{main.cpp@{main.cpp}!convertToLengthIndicated@{convertToLengthIndicated}}
+\index{convertToLengthIndicated@{convertToLengthIndicated}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{convertToLengthIndicated()}{convertToLengthIndicated()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0b610e29c499d46a634eb62795a6d3f6} 
+void convert\+To\+Length\+Indicated (\begin{DoxyParamCaption}\item[{const string \&}]{input\+File}{, }\item[{const string \&}]{output\+File}{}\end{DoxyParamCaption})}
+
+
+
+Converts a CSV file to a length-\/indicated format. 
+
+Reads data from the input CSV file, packs each line into a length-\/indicated format, and writes it to the output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+File} & The name of the input CSV file. \\
+\hline
+{\em output\+File} & The name of the output file to store length-\/indicated records. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{main_8cpp_a0b610e29c499d46a634eb62795a6d3f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{main_8cpp_a0b610e29c499d46a634eb62795a6d3f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_aed3849f9a0d3dea3da2adac23c6cc56f}\index{main.cpp@{main.cpp}!createIndex@{createIndex}}
+\index{createIndex@{createIndex}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{createIndex()}{createIndex()}}
+{\footnotesize\ttfamily \label{main_8cpp_aed3849f9a0d3dea3da2adac23c6cc56f} 
+unordered\+\_\+map$<$ string, size\+\_\+t $>$ create\+Index (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Creates an index mapping primary keys (Zip Codes) to file offsets. 
+
+Reads the CSV file and extracts the Zip Code from each record. Stores the file offset of each record in an unordered\+\_\+map for fast lookup.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file containing length-\/indicated records. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An unordered\+\_\+map containing Zip Code keys and their respective file offsets. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{main_8cpp_aed3849f9a0d3dea3da2adac23c6cc56f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main function to execute CSV conversion, indexing, and zip code lookup. 
+
+Converts CSV files to length-\/indicated format, generates primary key indices, and supports searching for zip codes using the index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. \\
+\hline
+{\em argv} & Command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Exit status (0 on success, 1 on failure). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_a3d82b453bb5a855fa5dab6631891839b}\index{main.cpp@{main.cpp}!writeIndexToFile@{writeIndexToFile}}
+\index{writeIndexToFile@{writeIndexToFile}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{writeIndexToFile()}{writeIndexToFile()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3d82b453bb5a855fa5dab6631891839b} 
+void write\+Index\+To\+File (\begin{DoxyParamCaption}\item[{const unordered\+\_\+map$<$ string, size\+\_\+t $>$ \&}]{index}{, }\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Writes the created index to a file. 
+
+Outputs the Zip Code and corresponding file offset to a specified file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The unordered\+\_\+map containing Zip Code keys and file offsets. \\
+\hline
+{\em filename} & The name of the output file where the index will be stored. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{main_8cpp_a3d82b453bb5a855fa5dab6631891839b_icgraph}
+\end{center}
+\end{figure}
