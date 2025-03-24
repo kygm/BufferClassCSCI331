@@ -1,4 +1,6 @@
 /**
+ * Project 2.0 - CSCI 331
+ *
  * @file main.cpp
  * @brief Converts CSV files to length-indicated format and creates primary key indices.
  *
