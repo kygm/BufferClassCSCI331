@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [
+        "-Z12345",
+        "-Z00000"
+      ],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/Project2.0",
+      "program": "/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/Project2.0/zipsearch",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

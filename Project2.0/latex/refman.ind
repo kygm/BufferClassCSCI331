@@ -1,0 +1,35 @@
+\begin{theindex}
+
+  \item {findExtremeZipCodes}
+    \subitem {ZipCodeProcessor}, \hyperpage{6}
+
+  \indexspace
+
+  \item {getRecords}
+    \subitem {ZipCodeBuffer}, \hyperpage{5}
+
+  \indexspace
+
+  \item {loadCSV}
+    \subitem {ZipCodeBuffer}, \hyperpage{5}
+
+  \indexspace
+
+  \item {main.cpp}, \hyperpage{9}
+
+  \indexspace
+
+  \item {organizeByState}
+    \subitem {ZipCodeProcessor}, \hyperpage{6}
+
+  \indexspace
+
+  \item {ZipCodeBuffer}, \hyperpage{5}
+    \subitem {getRecords}, \hyperpage{5}
+    \subitem {loadCSV}, \hyperpage{5}
+  \item {ZipCodeProcessor}, \hyperpage{6}
+    \subitem {findExtremeZipCodes}, \hyperpage{6}
+    \subitem {organizeByState}, \hyperpage{6}
+  \item {ZipCodeRecord}, \hyperpage{7}
+
+\end{theindex}
