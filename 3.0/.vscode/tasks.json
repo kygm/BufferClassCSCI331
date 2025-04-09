@@ -10,7 +10,7 @@
                 "${fileDirname}\\main.cpp",
                 "${fileDirname}\\Buffer.cpp",
                 "-o",
-                "${fileDirname}\\zipcode.exe"
+                "${fileDirname}\\zipcode"
             ],
             "options": {
                 "cwd": "${fileDirname}"
