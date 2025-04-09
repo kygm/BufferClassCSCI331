@@ -7,10 +7,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${fileDirname}\\main.cpp",
-                "${fileDirname}\\Buffer.cpp",
+                "${fileDirname}/main.cpp",
+                "${fileDirname}/Buffer.cpp",
                 "-o",
-                "${fileDirname}\\zipcode"
+                "${fileDirname}/zipcode.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

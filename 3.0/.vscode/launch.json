@@ -4,7 +4,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}\\zipcode",
+      "program": "${fileDirname}/zipcode.exe",
       "args": [
         "-Z56301",
         "-Z90210",
@@ -24,7 +24,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "${fileDirname}",
-      "program": "${fileDirname}\\zipcode",
+      "program": "${fileDirname}/zipcode.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
