@@ -1,0 +1,61 @@
+\hypertarget{classZipCodeBuffer}{}\doxysection{Zip\+Code\+Buffer Class Reference}
+\label{classZipCodeBuffer}\index{ZipCodeBuffer@{ZipCodeBuffer}}
+
+
+Reads and processes a C\+SV file containing Zip Code records.  
+
+
+
+
+{\ttfamily \#include $<$zip\+\_\+code\+\_\+buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classZipCodeBuffer_a555604e53e0e325a7e6d5a7bd3415a49}{load\+C\+SV}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads a C\+SV file containing zip code data into memory. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structZipCodeRecord}{Zip\+Code\+Record}} $>$ \mbox{\hyperlink{classZipCodeBuffer_a0d3ac96fc90e473117f825d42452b06d}{get\+Records}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves all stored zip code records. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads and processes a C\+SV file containing Zip Code records. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classZipCodeBuffer_a0d3ac96fc90e473117f825d42452b06d}\label{classZipCodeBuffer_a0d3ac96fc90e473117f825d42452b06d}} 
+\index{ZipCodeBuffer@{ZipCodeBuffer}!getRecords@{getRecords}}
+\index{getRecords@{getRecords}!ZipCodeBuffer@{ZipCodeBuffer}}
+\doxysubsubsection{\texorpdfstring{getRecords()}{getRecords()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structZipCodeRecord}{Zip\+Code\+Record}} $>$ Zip\+Code\+Buffer\+::get\+Records (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves all stored zip code records. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \mbox{\hyperlink{structZipCodeRecord}{Zip\+Code\+Record}} objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classZipCodeBuffer_a555604e53e0e325a7e6d5a7bd3415a49}\label{classZipCodeBuffer_a555604e53e0e325a7e6d5a7bd3415a49}} 
+\index{ZipCodeBuffer@{ZipCodeBuffer}!loadCSV@{loadCSV}}
+\index{loadCSV@{loadCSV}!ZipCodeBuffer@{ZipCodeBuffer}}
+\doxysubsubsection{\texorpdfstring{loadCSV()}{loadCSV()}}
+{\footnotesize\ttfamily bool Zip\+Code\+Buffer\+::load\+C\+SV (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads a C\+SV file containing zip code data into memory. 
+
+Group 5 -\/ Process zip codes from csv file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the C\+SV file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was loaded successfully, otherwise false. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+zip\+\_\+code\+\_\+buffer.\+h\item 
+zip\+\_\+code\+\_\+buffer.\+cpp\end{DoxyCompactItemize}

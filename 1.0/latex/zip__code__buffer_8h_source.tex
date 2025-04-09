@@ -1,0 +1,51 @@
+\doxysection{zip\+\_\+code\+\_\+buffer.\+h}
+\hypertarget{zip__code__buffer_8h_source}{}\label{zip__code__buffer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ zip\_code\_buffer.h\ (Header\ File)}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ ZIP\_CODE\_BUFFER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ ZIP\_CODE\_BUFFER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_zip_code_record}{ZipCodeRecord}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ zip\_code;}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ place\_name;}
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ state;}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ county;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ latitude;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ longitude;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zip_code_buffer}{ZipCodeBuffer}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<ZipCodeRecord>\ records;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_zip_code_buffer_a555604e53e0e325a7e6d5a7bd3415a49}{loadCSV}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00043\ \ \ \ \ std::vector<ZipCodeRecord>\ \mbox{\hyperlink{class_zip_code_buffer_a0d3ac96fc90e473117f825d42452b06d}{getRecords}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_zip_code_processor}{ZipCodeProcessor}}\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ std::map<std::string,\ std::vector<ZipCodeRecord>>\ state\_map;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_zip_code_processor_af61c38982f66476780464bfb8bb1695d}{organizeByState}}(\textcolor{keyword}{const}\ std::vector<ZipCodeRecord>\&\ records);}
+\DoxyCodeLine{00056\ \ \ \ \ std::map<std::string,\ std::tuple<ZipCodeRecord,\ ZipCodeRecord,\ ZipCodeRecord,\ ZipCodeRecord>>\ \mbox{\hyperlink{class_zip_code_processor_af737b3e021dd7ba0b690ad2a036e49d5}{findExtremeZipCodes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_zip_code_processor_a0e4bdbfabce8598ce7d342b2474956f1}{printResults}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ZIP\_CODE\_BUFFER\_H}}
+
+\end{DoxyCode}

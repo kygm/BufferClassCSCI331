@@ -1,0 +1,9 @@
+<map id="convertToLengthIndicated" name="convertToLengthIndicated">
+<area shape="rect" id="Node000001" title="Converts a CSV file to a length&#45;indicated format." alt="" coords="5,56,176,83"/>
+<area shape="rect" id="Node000002" href="$class_buffer.html#a6836a37494e3ad9644545bc6cd29cbbe" title="Packs a string into a length&#45;indicated format." alt="" coords="245,5,336,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,53,229,31,230,37,147,58"/>
+<area shape="rect" id="Node000003" href="$class_buffer.html#a6a27aa54d36921c5d1df772f5188fbe9" title="Unpacks a length&#45;indicated string from the buffer." alt="" coords="238,56,343,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,67,222,67,222,72,176,72"/>
+<area shape="rect" id="Node000004" href="$class_buffer.html#a19ff8d9cac721713de36b815929e0811" title="Writes the header record to the output file stream." alt="" coords="224,107,357,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,81,221,100,219,105,146,86"/>
+</map>
