@@ -1,53 +1,123 @@
 \begin{theindex}
 
-  \item {Buffer}, \hyperpage{5}
-    \subitem {buffer}, \hyperpage{7}
-    \subitem {pack}, \hyperpage{5}
-    \subitem {readHeader}, \hyperpage{6}
-    \subitem {unpack}, \hyperpage{6}
-    \subitem {writeHeader}, \hyperpage{6}
-  \item {buffer}
-    \subitem {Buffer}, \hyperpage{7}
-  \item {Buffer.cpp}, \hyperpage{9}
-  \item {Buffer.h}, \hyperpage{9}
+  \item {Block}, \hyperpage{5}
+    \subitem {Block}, \hyperpage{5}
+    \subitem {blockNumber}, \hyperpage{6}
+    \subitem {deserialize}, \hyperpage{6}
+    \subitem {dump}, \hyperpage{6}
+    \subitem {nextBlock}, \hyperpage{6}
+    \subitem {records}, \hyperpage{7}
+    \subitem {serialize}, \hyperpage{6}
+  \item {Block.h}, \hyperpage{13}
+  \item {BlockBuffer}, \hyperpage{7}
+    \subitem {readBlocks}, \hyperpage{7}
+    \subitem {writeBlocks}, \hyperpage{7}
+  \item {BlockBuffer.cpp}, \hyperpage{15}
+  \item {BlockBuffer.h}, \hyperpage{16}
+  \item {blockNumber}
+    \subitem {Block}, \hyperpage{6}
+  \item {Buffer}, \hyperpage{8}
+    \subitem {getBuffer}, \hyperpage{9}
+    \subitem {pack}, \hyperpage{9}
+    \subitem {readHeader}, \hyperpage{9}
+    \subitem {unpack}, \hyperpage{9}
+    \subitem {writeHeader}, \hyperpage{9}
+  \item {Buffer.cpp}, \hyperpage{17}
+  \item {Buffer.h}, \hyperpage{17}
 
   \indexspace
 
-  \item {convertToLengthIndicated}
-    \subitem {main.cpp}, \hyperpage{12}
-  \item {createIndex}
-    \subitem {main.cpp}, \hyperpage{12}
+  \item {createBlocks}
+    \subitem {main.cpp}, \hyperpage{19}
+
+  \indexspace
+
+  \item {deserialize}
+    \subitem {Block}, \hyperpage{6}
+    \subitem {Record}, \hyperpage{10}
+  \item {dump}
+    \subitem {Block}, \hyperpage{6}
+  \item {dumpLogical}
+    \subitem {main.cpp}, \hyperpage{19}
+  \item {dumpPhysical}
+    \subitem {main.cpp}, \hyperpage{19}
+
+  \indexspace
+
+  \item {field1}
+    \subitem {Record}, \hyperpage{11}
+  \item {field2}
+    \subitem {Record}, \hyperpage{11}
+  \item {field3}
+    \subitem {Record}, \hyperpage{11}
+
+  \indexspace
+
+  \item {getBuffer}
+    \subitem {Buffer}, \hyperpage{9}
+
+  \indexspace
+
+  \item {index}
+    \subitem {Record}, \hyperpage{11}
 
   \indexspace
 
   \item {main}
-    \subitem {main.cpp}, \hyperpage{13}
-  \item {main.cpp}, \hyperpage{11}
-    \subitem {convertToLengthIndicated}, \hyperpage{12}
-    \subitem {createIndex}, \hyperpage{12}
-    \subitem {main}, \hyperpage{13}
-    \subitem {writeIndexToFile}, \hyperpage{13}
+    \subitem {main.cpp}, \hyperpage{20}
+  \item {main.cpp}, \hyperpage{18}
+    \subitem {createBlocks}, \hyperpage{19}
+    \subitem {dumpLogical}, \hyperpage{19}
+    \subitem {dumpPhysical}, \hyperpage{19}
+    \subitem {main}, \hyperpage{20}
+    \subitem {readCSV}, \hyperpage{20}
+
+  \indexspace
+
+  \item {nextBlock}
+    \subitem {Block}, \hyperpage{6}
 
   \indexspace
 
   \item {pack}
-    \subitem {Buffer}, \hyperpage{5}
+    \subitem {Buffer}, \hyperpage{9}
 
   \indexspace
 
+  \item {readBlocks}
+    \subitem {BlockBuffer}, \hyperpage{7}
+  \item {readCSV}
+    \subitem {main.cpp}, \hyperpage{20}
   \item {readHeader}
-    \subitem {Buffer}, \hyperpage{6}
+    \subitem {Buffer}, \hyperpage{9}
+  \item {Record}, \hyperpage{10}
+    \subitem {deserialize}, \hyperpage{10}
+    \subitem {field1}, \hyperpage{11}
+    \subitem {field2}, \hyperpage{11}
+    \subitem {field3}, \hyperpage{11}
+    \subitem {index}, \hyperpage{11}
+    \subitem {Record}, \hyperpage{10}
+    \subitem {serialize}, \hyperpage{11}
+  \item {Record.h}, \hyperpage{20}
+  \item {records}
+    \subitem {Block}, \hyperpage{7}
+
+  \indexspace
+
+  \item {serialize}
+    \subitem {Block}, \hyperpage{6}
+    \subitem {Record}, \hyperpage{11}
 
   \indexspace
 
   \item {unpack}
-    \subitem {Buffer}, \hyperpage{6}
+    \subitem {Buffer}, \hyperpage{9}
 
   \indexspace
 
+  \item {writeBlocks}
+    \subitem {BlockBuffer}, \hyperpage{7}
   \item {writeHeader}
-    \subitem {Buffer}, \hyperpage{6}
-  \item {writeIndexToFile}
-    \subitem {main.cpp}, \hyperpage{13}
+    \subitem {Buffer}, \hyperpage{9}
 
 \end{theindex}

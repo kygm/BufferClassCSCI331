@@ -1,0 +1,69 @@
+\doxysection{Block\+Buffer Class Reference}
+\hypertarget{classBlockBuffer}{}\label{classBlockBuffer}\index{BlockBuffer@{BlockBuffer}}
+
+
+{\ttfamily \#include $<$Block\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classBlockBuffer_a74899c7f817a3d9ae51f2e008c057046}{write\+Blocks}} (const std\+::string \&filename, const std\+::vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Writes a blocked sequence set file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlockBuffer_a6b906e90453ecf21f73ff27f9536763d}{read\+Blocks}} (const std\+::string \&filename, std\+::vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Reads a blocked sequence set file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlockBuffer_a6b906e90453ecf21f73ff27f9536763d}\label{classBlockBuffer_a6b906e90453ecf21f73ff27f9536763d} 
+\index{BlockBuffer@{BlockBuffer}!readBlocks@{readBlocks}}
+\index{readBlocks@{readBlocks}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{readBlocks()}{readBlocks()}}
+{\footnotesize\ttfamily bool Block\+Buffer\+::read\+Blocks (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&}]{blocks }\end{DoxyParamCaption})}
+
+
+
+Reads a blocked sequence set file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The input file name. \\
+\hline
+{\em blocks} & A vector to receive the blocks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success. 
+\end{DoxyReturn}
+\Hypertarget{classBlockBuffer_a74899c7f817a3d9ae51f2e008c057046}\label{classBlockBuffer_a74899c7f817a3d9ae51f2e008c057046} 
+\index{BlockBuffer@{BlockBuffer}!writeBlocks@{writeBlocks}}
+\index{writeBlocks@{writeBlocks}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{writeBlocks()}{writeBlocks()}}
+{\footnotesize\ttfamily bool Block\+Buffer\+::write\+Blocks (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&}]{blocks }\end{DoxyParamCaption})}
+
+
+
+Writes a blocked sequence set file. 
+
+The file consists of\+:
+\begin{DoxyItemize}
+\item A file header (packed using \doxylink{classBuffer}{Buffer})
+\item A line with the number of blocks
+\item For each block\+: a length indicator (the size of the packed block) and the packed block data.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The output file name. \\
+\hline
+{\em blocks} & A vector of blocks to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{BlockBuffer_8h}{Block\+Buffer.\+h}}\item 
+\mbox{\hyperlink{BlockBuffer_8cpp}{Block\+Buffer.\+cpp}}\end{DoxyCompactItemize}

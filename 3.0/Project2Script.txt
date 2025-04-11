@@ -1,41 +1,0 @@
-Script started on 2025-03-24 17:27:25-05:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="243" LINES="12"]
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ g++ main.cpp Buffer.co[K[Kcpp -o zipcode
-[?2004l[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ ls
-[?2004l[0m[01;32mBuffer.cpp[0m  [01;32mBuffer.h[0m  [01;32mDoxyfile[0m  [01;32mOut_ZipCode_Scripts[0m  [01;32mProject2Script.txt[0m  [34;42mhtml[0m  [34;42mlatex[0m  [01;32mmain.cpp[0m  [34;42moutput[0m  [34;42mresources[0m  [01;32mzipcode[0m
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ rm [K[K[Kls o[K./output
-[?2004l[0m[01;32mordered_index.txt[0m  [01;32mordered_length_indicated.txt[0m  [01;32mrandomized_index.txt[0m  [01;32mrandomized_length_indicated.txt[0m
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ rm ./output
-[?2004lrm: cannot remove './output': Is a directory
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ cd ./output
-[?2004l[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2/output[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2/output[00m$ rm *
-[?2004l[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2/output[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2/output[00m$ cd ../
-[?2004l[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ ls ./output
-[?2004l[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ [7m./zipcode -Z56301 -Z12345 -Z000000[27m./zipcode -Z56301 -Z12345 -Z000000[C[C -Z56307 -Z12311 -Z99999[K9
-[?2004lCSCI 331 Project 2.0
-Converting CSV files to length-indicated format and creating primary key indices...
-Creating and saving primary key indices...
-
-Searching zipcodes in the indexed file...
-Found: 56301
-Found: 12345
-Not Found: 000000
-Found: 56307
-Not Found: 12311
-Not Found: 99999
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ ./zipcode -Z56301 -Z12345 -Z000000 -Z56307 -Z12311 -Z99999[K[K[K[K[K[K[K[K[K[K55551 -Z56362
-[?2004lCSCI 331 Project 2.0
-Converting CSV files to length-indicated format and creating primary key indices...
-Creating and saving primary key indices...
-
-Searching zipcodes in the indexed file...
-Found: 56301
-Found: 55551
-Found: 56362
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ ls
-[?2004l[0m[01;32mBuffer.cpp[0m  [01;32mBuffer.h[0m  [01;32mDoxyfile[0m  [01;32mOut_ZipCode_Scripts[0m  [01;32mProject2Script.txt[0m  [34;42mhtml[0m  [34;42mlatex[0m  [01;32mmain.cpp[0m  [34;42moutput[0m  [34;42mresources[0m  [01;32mzipcode[0m
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ ls ./output
-[?2004l[0m[01;32mordered_index.txt[0m  [01;32mordered_length_indicated.txt[0m  [01;32mrandomized_index.txt[0m  [01;32mrandomized_length_indicated.txt[0m
-[?2004h]0;doge@doge: /mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[01;32mdoge@doge[00m:[01;34m/mnt/c/Users/ricke/Desktop/CSCI 331/Project1.0/zipCode-Project2[00m$ exit
-[?2004lexit
-
-Script done on 2025-03-24 17:31:09-05:00 [COMMAND_EXIT_CODE="0"]

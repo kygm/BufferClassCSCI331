@@ -1,159 +1,129 @@
-/**
- * Project 2.0 - CSCI 331
- *
- * @file main.cpp
- * @brief Converts CSV files to length-indicated format and creates primary key indices.
- *
- * This program processes CSV files to transform them into a length-indicated format.
- * It then creates an index based on the primary key (Zip Code) and writes this index to a file.
- * The program also supports searching for zip codes using the generated index.
- *
- * Usage:
- * Run the program with optional command-line arguments to search for specific zip codes.
- * Example: ./program -Z12345 -Z67890
- */
-
-#include "Buffer.h"
-#include <fstream>
 #include <iostream>
-#include <unordered_map>
+#include <fstream>
+#include <sstream>
 #include <vector>
+#include <string>
+#include "BlockBuffer.h"
+#include "Block.h"
+#include "Record.h"
 
 using namespace std;
 
 /**
- * @brief Converts a CSV file to a length-indicated format.
- *
- * Reads data from the input CSV file, packs each line into a length-indicated format,
- * and writes it to the output file.
- *
- * @param inputFile The name of the input CSV file.
- * @param outputFile The name of the output file to store length-indicated records.
+ * @brief Reads a CSV file (with a header) and returns a vector of CSV record strings.
  */
-void convertToLengthIndicated(const string &inputFile, const string &outputFile)
-{
-    ifstream inFile(inputFile);
-    ofstream outFile(outputFile);
-    Buffer buffer;
-
-    // Write header
-    string header;
-    getline(inFile, header);
-    buffer.pack(header);
-    buffer.writeHeader(outFile);
-
-    // Process records
+vector<string> readCSV(const string &filename) {
+    vector<string> lines;
+    ifstream ifs(filename);
+    if (!ifs) {
+        cerr << "Error opening CSV file: " << filename << endl;
+        return lines;
+    }
     string line;
-    while (getline(inFile, line))
-    {
-        buffer.pack(line);
-        outFile << buffer.unpack() << endl;
+    getline(ifs, line); // Skip header
+    while (getline(ifs, line)) {
+        if (!line.empty())
+            lines.push_back(line);
+    }
+    return lines;
+}
+
+/**
+ * @brief Creates blocks from CSV record strings.
+ */
+vector<Block> createBlocks(const vector<string> &records, int recordsPerBlock) {
+    vector<Block> blocks;
+    int blockNum = 0;
+    for (size_t i = 0; i < records.size(); i += recordsPerBlock) {
+        Block blk;
+        blk.blockNumber = blockNum;
+        int end = std::min((size_t)recordsPerBlock, records.size() - i);
+        for (int j = 0; j < end; j++) {
+            std::stringstream ss(records[i + j]);
+            Record r;
+            std::string token;
+            getline(ss, token, ',');
+            r.index = std::stoi(token);
+            getline(ss, r.field1, ',');
+            getline(ss, r.field2, ',');
+            getline(ss, r.field3, ',');
+            blk.records.push_back(r);
+        }
+        blk.nextBlock = (i + recordsPerBlock < records.size()) ? blockNum + 1 : -1;
+        blocks.push_back(blk);
+        blockNum++;
+    }
+    return blocks;
+}
+
+/**
+ * @brief Dump blocks in physical order (as stored in file).
+ */
+void dumpPhysical(const vector<Block>& blocks) {
+    cout << "PHYSICAL BLOCK DUMP:\n";
+    for (const auto &blk : blocks) {
+        blk.dump();
+        cout << "-------------------------" << endl;
     }
 }
 
 /**
- * @brief Creates an index mapping primary keys (Zip Codes) to file offsets.
- *
- * Reads the CSV file and extracts the Zip Code from each record. Stores the file
- * offset of each record in an unordered_map for fast lookup.
- *
- * @param filename The name of the file containing length-indicated records.
- * @return An unordered_map containing Zip Code keys and their respective file offsets.
+ * @brief Dump blocks in logical order (following nextBlock pointer).
  */
-unordered_map<string, size_t> createIndex(const string &filename)
-{
-    unordered_map<string, size_t> index;
-    ifstream file(filename);
-    size_t offset = 0;
-    string line;
-
-    // Skip header
-    getline(file, line);
-
-    while (getline(file, line))
-    {
-        string zipCode = line.substr(0, line.find(',')); // Extract Zip Code
-        index[zipCode] = offset;
-        offset = file.tellg();
-    }
-
-    return index;
-}
-
-/**
- * @brief Writes the created index to a file.
- *
- * Outputs the Zip Code and corresponding file offset to a specified file.
- *
- * @param index The unordered_map containing Zip Code keys and file offsets.
- * @param filename The name of the output file where the index will be stored.
- */
-void writeIndexToFile(const unordered_map<string, size_t> &index, const string &filename)
-{
-    ofstream outFile(filename);
-    for (const auto &entry : index)
-    {
-        outFile << entry.first << "," << entry.second << endl;
+void dumpLogical(const vector<Block>& blocks) {
+    cout << "LOGICAL BLOCK DUMP:\n";
+    int next = 0;
+    while (next != -1 && next < blocks.size()) {
+        blocks[next].dump();
+        cout << "-------------------------" << endl;
+        next = blocks[next].nextBlock;
     }
 }
 
-/**
- * @brief Main function to execute CSV conversion, indexing, and zip code lookup.
- *
- * Converts CSV files to length-indicated format, generates primary key indices,
- * and supports searching for zip codes using the index.
- *
- * @param argc Number of command-line arguments.
- * @param argv Command-line arguments.
- * @return Exit status (0 on success, 1 on failure).
- */
-int main(int argc, char *argv[])
-{
-    cout << "CSCI 331 Project 2.0\nConverting CSV files to length-indicated format and creating primary key indices...\n";
+int main(int argc, char* argv[]) {
+    string csvFilename = "./resources/zip_codes.csv";
+    string blockFilename = "./output/blocked_sequence_set.txt";
+    int recordsPerBlock = 3;
 
-    // Convert CSV files to length-indicated format
-    convertToLengthIndicated("resources/zipCodes.csv", "output/ordered_length_indicated.txt");
-    convertToLengthIndicated("resources/randomized.csv", "output/randomized_length_indicated.txt");
+    bool dumpPhys = false;
+    bool dumpLogic = false;
 
-    cout << "Creating and saving primary key indices...\n";
+    // Parse command-line flags
+    for (int i = 1; i < argc; i++) {
+        string arg = argv[i];
+        if (arg == "--dumpPhysical") dumpPhys = true;
+        if (arg == "--dumpLogical") dumpLogic = true;
+    }
 
-    // Create and save primary key indices
-    unordered_map<string, size_t> orderedIndex = createIndex("output/ordered_length_indicated.txt");
-    writeIndexToFile(orderedIndex, "output/ordered_index.txt");
+    BlockBuffer bb;
+    vector<Block> blocks;
 
-    unordered_map<string, size_t> randomizedIndex = createIndex("output/randomized_length_indicated.txt");
-    writeIndexToFile(randomizedIndex, "output/randomized_index.txt");
+    if (dumpPhys || dumpLogic) {
+        // Read blocks from file
+        if (!bb.readBlocks(blockFilename, blocks)) {
+            cerr << "Error reading block file." << endl;
+            return 1;
+        }
 
-    // Handle command-line arguments
-    if (argc < 2)
-    {
-        cerr << "Usage: " << argv[0] << " -Z<zipCode1> -Z<zipCode2> ..." << endl;
+        if (dumpPhys) dumpPhysical(blocks);
+        if (dumpLogic) dumpLogical(blocks);
+        return 0;
+    }
+
+    // GENERATION MODE: build blocks from CSV
+    vector<string> csvRecords = readCSV(csvFilename);
+    if (csvRecords.empty()) {
+        cerr << "No records found in CSV file." << endl;
         return 1;
     }
 
-    vector<string> zipCodes;
-    for (int i = 1; i < argc; ++i)
-    {
-        if (string(argv[i]).substr(0, 2) == "-Z")
-        {
-            zipCodes.push_back(string(argv[i]).substr(2)); // Extract Zip Code
-        }
+    blocks = createBlocks(csvRecords, recordsPerBlock);
+
+    if (!bb.writeBlocks(blockFilename, blocks)) {
+        cerr << "Error writing block file." << endl;
+        return 1;
     }
 
-    cout << "\nSearching zipcodes in the indexed file..." << endl;
-
-    // Search for Zip Codes
-    for (const string &zipCode : zipCodes)
-    {
-        if (orderedIndex.find(zipCode) != orderedIndex.end())
-        {
-            cout << "Found: " << zipCode << endl;
-        }
-        else
-        {
-            cout << "Not Found: " << zipCode << endl;
-        }
-    }
-
+    cout << "Blocked sequence set file generated: " << blockFilename << endl;
     return 0;
 }

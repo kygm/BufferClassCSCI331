@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer_0',['buffer',['../class_buffer.html#a2ba9f070ca44b52cb5d9abe5643b5903',1,'Buffer']]]
+    ['blocknumber_0', ['blockNumber', ['../classBlock.html#ae02484bba518ffa13f08b717f27567aa', 1, 'Block']]]
 ];
