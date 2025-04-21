@@ -1,0 +1,124 @@
+\doxysection{Block Class Reference}
+\hypertarget{classBlock}{}\label{classBlock}\index{Block@{Block}}
+
+
+{\ttfamily \#include $<$Block.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlock_a37658a946bf5067ad01d68d9ff086adc}{Block}} ()
+\item 
+std\+::string \mbox{\hyperlink{classBlock_a9b763f9cd785606584f98f949eb29aa3}{serialize}} () const
+\begin{DoxyCompactList}\small\item\em Serializes the block to a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlock_aff70cf68ccbef55cdf18e38060922622}{dump}} () const
+\begin{DoxyCompactList}\small\item\em Dumps the block content to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classBlock}{Block}} \mbox{\hyperlink{classBlock_a5331535eeae532b7000c919d496d2a48}{deserialize}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Deserializes a block from a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classBlock_ae02484bba518ffa13f08b717f27567aa}{block\+Number}}
+\begin{DoxyCompactList}\small\item\em Sequential number of the block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBlock_a33bb6ae20495816c1028b09ab7e9753e}{next\+Block}}
+\begin{DoxyCompactList}\small\item\em Logical pointer to the next block (-\/1 if none). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classRecord}{Record}} $>$ \mbox{\hyperlink{classBlock_a724ef3897835b66c4d1a847564e83837}{records}}
+\begin{DoxyCompactList}\small\item\em List of records in this block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBlock_a37658a946bf5067ad01d68d9ff086adc}\label{classBlock_a37658a946bf5067ad01d68d9ff086adc} 
+\index{Block@{Block}!Block@{Block}}
+\index{Block@{Block}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{Block()}{Block()}}
+{\footnotesize\ttfamily Block\+::\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBlock_a5331535eeae532b7000c919d496d2a48}\label{classBlock_a5331535eeae532b7000c919d496d2a48} 
+\index{Block@{Block}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classBlock}{Block}} Block\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Deserializes a block from a string. 
+
+Expects the first line to be the block header. Each subsequent line is a packed record.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The serialized block string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classBlock}{Block} object. 
+\end{DoxyReturn}
+\Hypertarget{classBlock_aff70cf68ccbef55cdf18e38060922622}\label{classBlock_aff70cf68ccbef55cdf18e38060922622} 
+\index{Block@{Block}!dump@{dump}}
+\index{dump@{dump}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void Block\+::dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dumps the block content to standard output. 
+
+\Hypertarget{classBlock_a9b763f9cd785606584f98f949eb29aa3}\label{classBlock_a9b763f9cd785606584f98f949eb29aa3} 
+\index{Block@{Block}!serialize@{serialize}}
+\index{serialize@{serialize}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::string Block\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serializes the block to a string. 
+
+First writes a header line\+: block\+Number,record\+Count,next\+Block Then, for each record, packs the record using \doxylink{classBuffer}{Buffer} and writes the result.
+
+\begin{DoxyReturn}{Returns}
+The serialized block string. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBlock_ae02484bba518ffa13f08b717f27567aa}\label{classBlock_ae02484bba518ffa13f08b717f27567aa} 
+\index{Block@{Block}!blockNumber@{blockNumber}}
+\index{blockNumber@{blockNumber}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{blockNumber}{blockNumber}}
+{\footnotesize\ttfamily int Block\+::block\+Number}
+
+
+
+Sequential number of the block. 
+
+\Hypertarget{classBlock_a33bb6ae20495816c1028b09ab7e9753e}\label{classBlock_a33bb6ae20495816c1028b09ab7e9753e} 
+\index{Block@{Block}!nextBlock@{nextBlock}}
+\index{nextBlock@{nextBlock}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{nextBlock}{nextBlock}}
+{\footnotesize\ttfamily int Block\+::next\+Block}
+
+
+
+Logical pointer to the next block (-\/1 if none). 
+
+\Hypertarget{classBlock_a724ef3897835b66c4d1a847564e83837}\label{classBlock_a724ef3897835b66c4d1a847564e83837} 
+\index{Block@{Block}!records@{records}}
+\index{records@{records}!Block@{Block}}
+\doxysubsubsection{\texorpdfstring{records}{records}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classRecord}{Record}}$>$ Block\+::records}
+
+
+
+List of records in this block. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Block_8h}{Block.\+h}}\end{DoxyCompactItemize}

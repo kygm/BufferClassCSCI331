@@ -1,0 +1,80 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}Block\+Buffer.\+h"{}}\newline
+{\ttfamily \#include "{}Block.\+h"{}}\newline
+{\ttfamily \#include "{}Record.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5}{read\+CSV}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Reads a CSV file (with a header) and returns a vector of CSV record strings. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \mbox{\hyperlink{main_8cpp_af24f251209bfddecf22c16b78504f440}{create\+Blocks}} (const vector$<$ string $>$ \&records, int records\+Per\+Block)
+\begin{DoxyCompactList}\small\item\em Creates blocks from CSV record strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539}{dump\+Physical}} (const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Dump blocks in physical order (as stored in file). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a31997b301690ede4286dbc57baf7ceda}{dump\+Logical}} (const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Dump blocks in logical order (following next\+Block pointer). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_af24f251209bfddecf22c16b78504f440}\label{main_8cpp_af24f251209bfddecf22c16b78504f440} 
+\index{main.cpp@{main.cpp}!createBlocks@{createBlocks}}
+\index{createBlocks@{createBlocks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{createBlocks()}{createBlocks()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ create\+Blocks (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{records,  }\item[{int}]{records\+Per\+Block }\end{DoxyParamCaption})}
+
+
+
+Creates blocks from CSV record strings. 
+
+\Hypertarget{main_8cpp_a31997b301690ede4286dbc57baf7ceda}\label{main_8cpp_a31997b301690ede4286dbc57baf7ceda} 
+\index{main.cpp@{main.cpp}!dumpLogical@{dumpLogical}}
+\index{dumpLogical@{dumpLogical}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{dumpLogical()}{dumpLogical()}}
+{\footnotesize\ttfamily void dump\+Logical (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&}]{blocks }\end{DoxyParamCaption})}
+
+
+
+Dump blocks in logical order (following next\+Block pointer). 
+
+\Hypertarget{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539}\label{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539} 
+\index{main.cpp@{main.cpp}!dumpPhysical@{dumpPhysical}}
+\index{dumpPhysical@{dumpPhysical}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{dumpPhysical()}{dumpPhysical()}}
+{\footnotesize\ttfamily void dump\+Physical (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&}]{blocks }\end{DoxyParamCaption})}
+
+
+
+Dump blocks in physical order (as stored in file). 
+
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5}\label{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5} 
+\index{main.cpp@{main.cpp}!readCSV@{readCSV}}
+\index{readCSV@{readCSV}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{readCSV()}{readCSV()}}
+{\footnotesize\ttfamily vector$<$ string $>$ read\+CSV (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Reads a CSV file (with a header) and returns a vector of CSV record strings. 
+

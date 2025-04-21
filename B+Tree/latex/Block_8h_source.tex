@@ -1,0 +1,78 @@
+\doxysection{Block.\+h}
+\hypertarget{Block_8h_source}{}\label{Block_8h_source}\mbox{\hyperlink{Block_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BLOCK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BLOCK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Record_8h}{Record.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Buffer_8h}{Buffer.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBlock}{Block}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBlock_ae02484bba518ffa13f08b717f27567aa}{blockNumber}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBlock_a33bb6ae20495816c1028b09ab7e9753e}{nextBlock}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<Record>\ \mbox{\hyperlink{classBlock_a724ef3897835b66c4d1a847564e83837}{records}};\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classBlock_a37658a946bf5067ad01d68d9ff086adc}{Block}}()\ :\ \mbox{\hyperlink{classBlock_ae02484bba518ffa13f08b717f27567aa}{blockNumber}}(0),\ \mbox{\hyperlink{classBlock_a33bb6ae20495816c1028b09ab7e9753e}{nextBlock}}(-\/1)\ \{\}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00027\ \ \ \ \ std::string\ \mbox{\hyperlink{classBlock_a9b763f9cd785606584f98f949eb29aa3}{serialize}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ block\ header.}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ ss\ <<\ \mbox{\hyperlink{classBlock_ae02484bba518ffa13f08b717f27567aa}{blockNumber}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{classBlock_a724ef3897835b66c4d1a847564e83837}{records}}.size()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{classBlock_a33bb6ae20495816c1028b09ab7e9753e}{nextBlock}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ each\ record\ (packed\ with\ Buffer).}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&rec\ :\ \mbox{\hyperlink{classBlock_a724ef3897835b66c4d1a847564e83837}{records}})\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBuffer}{Buffer}}\ buf;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ recStr\ =\ rec.serialize();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ buf.\mbox{\hyperlink{classBuffer_a6836a37494e3ad9644545bc6cd29cbbe}{pack}}(recStr);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ buf.\mbox{\hyperlink{classBuffer_a6b2613034a5a4a2261cc926bf47c105d}{getBuffer}}()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classBlock}{Block}}\ \mbox{\hyperlink{classBlock_a5331535eeae532b7000c919d496d2a48}{deserialize}}(\textcolor{keyword}{const}\ std::string\ \&data)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBlock}{Block}}\ blk;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::stringstream\ ss(data);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ header\ line.}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getline(ss,\ line))\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ headerStream(line);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ token;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ getline(headerStream,\ token,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{classBlock_ae02484bba518ffa13f08b717f27567aa}{blockNumber}}\ =\ std::stoi(token);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ getline(headerStream,\ token,\ \textcolor{charliteral}{','});\ \textcolor{comment}{//\ record\ count\ (not\ used\ here)}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ recordCount\ =\ std::stoi(token);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ getline(headerStream,\ token,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{classBlock_a33bb6ae20495816c1028b09ab7e9753e}{nextBlock}}\ =\ std::stoi(token);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ each\ packed\ record.}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(ss,\ line))\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.empty())}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Unpack\ the\ record\ manually.}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ commaPos\ =\ line.find(\textcolor{charliteral}{','});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commaPos\ ==\ std::string::npos)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ len\ =\ std::stoi(line.substr(0,\ commaPos));}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ recData\ =\ line.substr(commaPos\ +\ 1,\ len);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRecord}{Record}}\ r\ =\ \mbox{\hyperlink{classRecord_ad399872ad3346031a4738b54f60730f5}{Record::deserialize}}(recData);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ blk.\mbox{\hyperlink{classBlock_a724ef3897835b66c4d1a847564e83837}{records}}.push\_back(r);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blk;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBlock_aff70cf68ccbef55cdf18e38060922622}{dump}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Block\ Number:\ "{}}\ <<\ \mbox{\hyperlink{classBlock_ae02484bba518ffa13f08b717f27567aa}{blockNumber}}\ <<\ \textcolor{stringliteral}{"{},\ Next\ Block:\ "{}}\ <<\ \mbox{\hyperlink{classBlock_a33bb6ae20495816c1028b09ab7e9753e}{nextBlock}}\ <<\ std::endl;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Records:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&r\ :\ \mbox{\hyperlink{classBlock_a724ef3897835b66c4d1a847564e83837}{records}})\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ r.index\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ r.field1\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ r.field2\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ r.field3\ <<\ std::endl;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
