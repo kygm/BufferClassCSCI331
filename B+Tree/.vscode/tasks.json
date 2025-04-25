@@ -5,19 +5,20 @@
             "label": "C/C++: g++ build active file",
             "command": "g++",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${fileDirname}\\main.cpp",
-                "${fileDirname}\\Buffer.cpp",
-                "${fileDirname}\\BlockBuffer.cpp",
-                "-o",
-                "${fileDirname}\\btree.exe",
+                "-fdiagnostics-color=always", // Enables colored output for errors
+                "-g", // Includes debugging symbols
+                "${fileDirname}/main.cpp", // Main source file
+                "${fileDirname}/Buffer.cpp", // Buffer class implementation
+                "${fileDirname}/BlockBuffer.cpp", // BlockBuffer implementation
+                "${fileDirname}/BPlusTree.cpp", // BPlusTree class implementation
+                "-o", // Specifies output binary
+                "${fileDirname}/btree.exe" // Output binary name
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${fileDirname}" // Sets current working directory
             },
             "problemMatcher": [
-                "$gcc"
+                "$gcc" // Matches errors/warnings from GCC
             ],
             "group": {
                 "kind": "build",

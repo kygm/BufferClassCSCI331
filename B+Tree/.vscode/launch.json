@@ -6,9 +6,7 @@
       "request": "launch",
       "program": "${fileDirname}\\btree.exe",
       "args": [
-        "-Z56301",
-        "-Z90210",
-        "-Z00000"
+        "--dumpPhysical"
       ],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
