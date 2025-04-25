@@ -1,4 +1,4 @@
 var searchData=
 [
-    ['main_0', ['main', ['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97', 1, 'main.cpp']]]
+  ['insert_0',['insert',['../class_b_plus_tree.html#ad7f3033a86483c667b22d0b2dbefb2c3',1,'BPlusTree']]]
 ];

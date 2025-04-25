@@ -1,0 +1,11 @@
+<map id="BlockBuffer::readBlocks" name="BlockBuffer::readBlocks">
+<area shape="rect" id="Node000001" title="Reads a blocked sequence set file." alt="" coords="5,31,167,57"/>
+<area shape="rect" id="Node000002" href="$class_block.html#a5331535eeae532b7000c919d496d2a48" title="Deserializes a block from a string." alt="" coords="215,31,339,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,41,199,41,199,47,167,47"/>
+<area shape="rect" id="Node000003" href="$class_block.html#a37658a946bf5067ad01d68d9ff086adc" title=" " alt="" coords="406,5,501,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,32,391,25,391,30,340,38"/>
+<area shape="rect" id="Node000004" href="$class_record.html#ad399872ad3346031a4738b54f60730f5" title="Deserializes a CSV string into a Record." alt="" coords="387,56,520,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="340,50,372,55,371,60,339,56"/>
+<area shape="rect" id="Node000005" href="$class_record.html#ae8ee53ffec6ff4dac9911517d47e86a5" title=" " alt="" coords="568,56,682,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="521,67,553,67,553,72,521,72"/>
+</map>

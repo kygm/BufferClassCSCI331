@@ -1,0 +1,203 @@
+\doxysection{Block\+Buffer Class Reference}
+\hypertarget{class_block_buffer}{}\label{class_block_buffer}\index{BlockBuffer@{BlockBuffer}}
+
+
+{\ttfamily \#include $<$Block\+Buffer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_block_buffer_a3d5a7c89997cd3b87e853c03b31fa115}{Block\+Buffer}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_block_buffer_a83c07942b1074a57c58b36da85374d38}{Block\+Buffer}} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Constructor that accepts a filename for file operations. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_block_buffer_a74899c7f817a3d9ae51f2e008c057046}{write\+Blocks}} (const std\+::string \&\mbox{\hyperlink{class_block_buffer_a0098a330d6f6ab7020d858f069a5a0a2}{filename}}, const std\+::vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Writes a blocked sequence set file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_block_buffer_a6b906e90453ecf21f73ff27f9536763d}{read\+Blocks}} (const std\+::string \&\mbox{\hyperlink{class_block_buffer_a0098a330d6f6ab7020d858f069a5a0a2}{filename}}, std\+::vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Reads a blocked sequence set file. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_block_buffer_abca0560163c7cfb3e7f95252b3b95f11}{get\+Filename}} () const
+\begin{DoxyCompactList}\small\item\em Accessor for the filename used in \doxylink{class_block_buffer}{Block\+Buffer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_block_buffer_a2b05fbd2ad69d34328d15a7133d0bf46}{set\+Filename}} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Mutator to set the filename for the \doxylink{class_block_buffer}{Block\+Buffer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_block_buffer_a0098a330d6f6ab7020d858f069a5a0a2}{filename}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_block_buffer_a3d5a7c89997cd3b87e853c03b31fa115}\index{BlockBuffer@{BlockBuffer}!BlockBuffer@{BlockBuffer}}
+\index{BlockBuffer@{BlockBuffer}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{BlockBuffer()}{BlockBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_block_buffer_a3d5a7c89997cd3b87e853c03b31fa115} 
+Block\+Buffer\+::\+Block\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_block_buffer_a83c07942b1074a57c58b36da85374d38}\index{BlockBuffer@{BlockBuffer}!BlockBuffer@{BlockBuffer}}
+\index{BlockBuffer@{BlockBuffer}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{BlockBuffer()}{BlockBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_block_buffer_a83c07942b1074a57c58b36da85374d38} 
+Block\+Buffer\+::\+Block\+Buffer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor that accepts a filename for file operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The file name to initialize the \doxylink{class_block_buffer}{Block\+Buffer} with. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_block_buffer_abca0560163c7cfb3e7f95252b3b95f11}\index{BlockBuffer@{BlockBuffer}!getFilename@{getFilename}}
+\index{getFilename@{getFilename}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{getFilename()}{getFilename()}}
+{\footnotesize\ttfamily \label{class_block_buffer_abca0560163c7cfb3e7f95252b3b95f11} 
+std\+::string Block\+Buffer\+::get\+Filename (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor for the filename used in \doxylink{class_block_buffer}{Block\+Buffer}. 
+
+\begin{DoxyReturn}{Returns}
+The file name associated with this \doxylink{class_block_buffer}{Block\+Buffer}. 
+\end{DoxyReturn}
+\Hypertarget{class_block_buffer_a6b906e90453ecf21f73ff27f9536763d}\index{BlockBuffer@{BlockBuffer}!readBlocks@{readBlocks}}
+\index{readBlocks@{readBlocks}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{readBlocks()}{readBlocks()}}
+{\footnotesize\ttfamily \label{class_block_buffer_a6b906e90453ecf21f73ff27f9536763d} 
+bool Block\+Buffer\+::read\+Blocks (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&}]{blocks}{}\end{DoxyParamCaption})}
+
+
+
+Reads a blocked sequence set file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The input file name. \\
+\hline
+{\em blocks} & A vector to receive the blocks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success.
+\end{DoxyReturn}
+Reads blocks from a file, deserializing each block after unpacking. Expects the file to have a header specifying the format and the number of blocks. Each block is read using its size indicator and reconstructed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the input file to read the blocks from. \\
+\hline
+{\em blocks} & A vector to receive the deserialized blocks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation succeeds, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_block_buffer_a6b906e90453ecf21f73ff27f9536763d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_block_buffer_a6b906e90453ecf21f73ff27f9536763d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_block_buffer_a2b05fbd2ad69d34328d15a7133d0bf46}\index{BlockBuffer@{BlockBuffer}!setFilename@{setFilename}}
+\index{setFilename@{setFilename}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{setFilename()}{setFilename()}}
+{\footnotesize\ttfamily \label{class_block_buffer_a2b05fbd2ad69d34328d15a7133d0bf46} 
+void Block\+Buffer\+::set\+Filename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutator to set the filename for the \doxylink{class_block_buffer}{Block\+Buffer}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The new file name to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_block_buffer_a74899c7f817a3d9ae51f2e008c057046}\index{BlockBuffer@{BlockBuffer}!writeBlocks@{writeBlocks}}
+\index{writeBlocks@{writeBlocks}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{writeBlocks()}{writeBlocks()}}
+{\footnotesize\ttfamily \label{class_block_buffer_a74899c7f817a3d9ae51f2e008c057046} 
+bool Block\+Buffer\+::write\+Blocks (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&}]{blocks}{}\end{DoxyParamCaption})}
+
+
+
+Writes a blocked sequence set file. 
+
+The file consists of\+:
+\begin{DoxyItemize}
+\item A file header (packed using \doxylink{class_buffer}{Buffer})
+\item A line with the number of blocks
+\item For each block\+: a length indicator (the size of the packed block) and the packed block data.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The output file name. \\
+\hline
+{\em blocks} & A vector of blocks to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success.
+\end{DoxyReturn}
+Writes blocks to a file, including a header that specifies the format and the number of blocks in the file. Each block is serialized, packed using \doxylink{class_buffer}{Buffer}, and written alongside its size indicator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the output file to write the blocks to. \\
+\hline
+{\em blocks} & A vector of \doxylink{class_block}{Block} objects to write to the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation succeeds, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_block_buffer_a74899c7f817a3d9ae51f2e008c057046_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_block_buffer_a74899c7f817a3d9ae51f2e008c057046_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_block_buffer_a0098a330d6f6ab7020d858f069a5a0a2}\index{BlockBuffer@{BlockBuffer}!filename@{filename}}
+\index{filename@{filename}!BlockBuffer@{BlockBuffer}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{class_block_buffer_a0098a330d6f6ab7020d858f069a5a0a2} 
+std\+::string Block\+Buffer\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_block_buffer_8h}{Block\+Buffer.\+h}}\item 
+\mbox{\hyperlink{_block_buffer_8cpp}{Block\+Buffer.\+cpp}}\end{DoxyCompactItemize}

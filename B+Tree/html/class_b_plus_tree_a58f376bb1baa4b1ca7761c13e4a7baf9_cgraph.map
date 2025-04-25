@@ -1,0 +1,6 @@
+<map id="BPlusTree::buildTree" name="BPlusTree::buildTree">
+<area shape="rect" id="Node000001" title="Constructs the B+ Tree hierarchy from a set of leaf blocks." alt="" coords="5,29,149,56"/>
+<area shape="rect" id="Node000002" href="$class_b_plus_tree.html#a602ef49ca32b41d29655077a5271ba58" title="Recursively creates index levels for the B+ Tree." alt="" coords="197,29,386,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,40,181,40,181,45,149,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="255,30,249,21,253,11,268,5,291,3,317,5,330,12,328,16,315,10,291,8,269,10,257,15,254,20,259,27"/>
+</map>

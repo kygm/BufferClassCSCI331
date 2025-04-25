@@ -1,123 +1,195 @@
 \begin{theindex}
 
   \item {Block}, \hyperpage{5}
-    \subitem {Block}, \hyperpage{5}
-    \subitem {blockNumber}, \hyperpage{6}
+    \subitem {Block}, \hyperpage{6}
+    \subitem {blockNumber}, \hyperpage{7}
+    \subitem {blockType}, \hyperpage{7}
     \subitem {deserialize}, \hyperpage{6}
     \subitem {dump}, \hyperpage{6}
-    \subitem {nextBlock}, \hyperpage{6}
-    \subitem {records}, \hyperpage{7}
-    \subitem {serialize}, \hyperpage{6}
-  \item {Block.h}, \hyperpage{13}
-  \item {BlockBuffer}, \hyperpage{7}
-    \subitem {readBlocks}, \hyperpage{7}
-    \subitem {writeBlocks}, \hyperpage{7}
-  \item {BlockBuffer.cpp}, \hyperpage{15}
-  \item {BlockBuffer.h}, \hyperpage{16}
+    \subitem {nextBlock}, \hyperpage{8}
+    \subitem {records}, \hyperpage{8}
+    \subitem {serialize}, \hyperpage{7}
+  \item {Block.h}, \hyperpage{25}
+    \subitem {BlockType}, \hyperpage{26}
+    \subitem {INDEX}, \hyperpage{26}
+    \subitem {LEAF}, \hyperpage{26}
+  \item {BlockBuffer}, \hyperpage{8}
+    \subitem {BlockBuffer}, \hyperpage{9}
+    \subitem {filename}, \hyperpage{12}
+    \subitem {getFilename}, \hyperpage{9}
+    \subitem {readBlocks}, \hyperpage{9}
+    \subitem {setFilename}, \hyperpage{10}
+    \subitem {writeBlocks}, \hyperpage{10}
+  \item {BlockBuffer.cpp}, \hyperpage{28}
+  \item {BlockBuffer.h}, \hyperpage{28}
   \item {blockNumber}
-    \subitem {Block}, \hyperpage{6}
-  \item {Buffer}, \hyperpage{8}
-    \subitem {getBuffer}, \hyperpage{9}
-    \subitem {pack}, \hyperpage{9}
-    \subitem {readHeader}, \hyperpage{9}
-    \subitem {unpack}, \hyperpage{9}
-    \subitem {writeHeader}, \hyperpage{9}
-  \item {Buffer.cpp}, \hyperpage{17}
-  \item {Buffer.h}, \hyperpage{17}
+    \subitem {Block}, \hyperpage{7}
+  \item {BlockType}
+    \subitem {Block.h}, \hyperpage{26}
+  \item {blockType}
+    \subitem {Block}, \hyperpage{7}
+  \item {BPlusTree}, \hyperpage{12}
+    \subitem {BPlusTree}, \hyperpage{13}
+    \subitem {buffer}, \hyperpage{19}
+    \subitem {buildTree}, \hyperpage{14}
+    \subitem {createIndexLevel}, \hyperpage{14}
+    \subitem {deleteRecord}, \hyperpage{15}
+    \subitem {dumpTree}, \hyperpage{16}
+    \subitem {filename}, \hyperpage{19}
+    \subitem {insert}, \hyperpage{16}
+    \subitem {mergeBlocks}, \hyperpage{17}
+    \subitem {recordsPerBlock}, \hyperpage{19}
+    \subitem {rootRBN}, \hyperpage{19}
+    \subitem {search}, \hyperpage{17}
+    \subitem {splitBlock}, \hyperpage{18}
+    \subitem {totalBlocks}, \hyperpage{19}
+  \item {BPlusTree.cpp}, \hyperpage{30}
+  \item {BPlusTree.h}, \hyperpage{30}
+  \item {Buffer}, \hyperpage{20}
+    \subitem {buffer}, \hyperpage{22}
+    \subitem {getBuffer}, \hyperpage{20}
+    \subitem {pack}, \hyperpage{20}
+    \subitem {readHeader}, \hyperpage{21}
+    \subitem {unpack}, \hyperpage{21}
+    \subitem {writeHeader}, \hyperpage{21}
+  \item {buffer}
+    \subitem {BPlusTree}, \hyperpage{19}
+    \subitem {Buffer}, \hyperpage{22}
+  \item {Buffer.cpp}, \hyperpage{32}
+  \item {Buffer.h}, \hyperpage{33}
+  \item {buildTree}
+    \subitem {BPlusTree}, \hyperpage{14}
 
   \indexspace
 
   \item {createBlocks}
-    \subitem {main.cpp}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{35}
+  \item {createIndexLevel}
+    \subitem {BPlusTree}, \hyperpage{14}
 
   \indexspace
 
+  \item {deleteRecord}
+    \subitem {BPlusTree}, \hyperpage{15}
   \item {deserialize}
     \subitem {Block}, \hyperpage{6}
-    \subitem {Record}, \hyperpage{10}
+    \subitem {Record}, \hyperpage{23}
   \item {dump}
     \subitem {Block}, \hyperpage{6}
   \item {dumpLogical}
-    \subitem {main.cpp}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{35}
   \item {dumpPhysical}
-    \subitem {main.cpp}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{36}
+  \item {dumpTree}
+    \subitem {BPlusTree}, \hyperpage{16}
 
   \indexspace
 
   \item {field1}
-    \subitem {Record}, \hyperpage{11}
+    \subitem {Record}, \hyperpage{23}
   \item {field2}
-    \subitem {Record}, \hyperpage{11}
+    \subitem {Record}, \hyperpage{23}
   \item {field3}
-    \subitem {Record}, \hyperpage{11}
+    \subitem {Record}, \hyperpage{24}
+  \item {filename}
+    \subitem {BlockBuffer}, \hyperpage{12}
+    \subitem {BPlusTree}, \hyperpage{19}
 
   \indexspace
 
   \item {getBuffer}
-    \subitem {Buffer}, \hyperpage{9}
+    \subitem {Buffer}, \hyperpage{20}
+  \item {getFilename}
+    \subitem {BlockBuffer}, \hyperpage{9}
 
   \indexspace
 
+  \item {INDEX}
+    \subitem {Block.h}, \hyperpage{26}
   \item {index}
-    \subitem {Record}, \hyperpage{11}
+    \subitem {Record}, \hyperpage{24}
+  \item {insert}
+    \subitem {BPlusTree}, \hyperpage{16}
+
+  \indexspace
+
+  \item {LEAF}
+    \subitem {Block.h}, \hyperpage{26}
 
   \indexspace
 
   \item {main}
-    \subitem {main.cpp}, \hyperpage{20}
-  \item {main.cpp}, \hyperpage{18}
-    \subitem {createBlocks}, \hyperpage{19}
-    \subitem {dumpLogical}, \hyperpage{19}
-    \subitem {dumpPhysical}, \hyperpage{19}
-    \subitem {main}, \hyperpage{20}
-    \subitem {readCSV}, \hyperpage{20}
+    \subitem {main.cpp}, \hyperpage{36}
+  \item {main.cpp}, \hyperpage{34}
+    \subitem {createBlocks}, \hyperpage{35}
+    \subitem {dumpLogical}, \hyperpage{35}
+    \subitem {dumpPhysical}, \hyperpage{36}
+    \subitem {main}, \hyperpage{36}
+    \subitem {readCSV}, \hyperpage{37}
+  \item {mergeBlocks}
+    \subitem {BPlusTree}, \hyperpage{17}
 
   \indexspace
 
   \item {nextBlock}
-    \subitem {Block}, \hyperpage{6}
+    \subitem {Block}, \hyperpage{8}
 
   \indexspace
 
   \item {pack}
-    \subitem {Buffer}, \hyperpage{9}
+    \subitem {Buffer}, \hyperpage{20}
 
   \indexspace
 
   \item {readBlocks}
-    \subitem {BlockBuffer}, \hyperpage{7}
+    \subitem {BlockBuffer}, \hyperpage{9}
   \item {readCSV}
-    \subitem {main.cpp}, \hyperpage{20}
+    \subitem {main.cpp}, \hyperpage{37}
   \item {readHeader}
-    \subitem {Buffer}, \hyperpage{9}
-  \item {Record}, \hyperpage{10}
-    \subitem {deserialize}, \hyperpage{10}
-    \subitem {field1}, \hyperpage{11}
-    \subitem {field2}, \hyperpage{11}
-    \subitem {field3}, \hyperpage{11}
-    \subitem {index}, \hyperpage{11}
-    \subitem {Record}, \hyperpage{10}
-    \subitem {serialize}, \hyperpage{11}
-  \item {Record.h}, \hyperpage{20}
+    \subitem {Buffer}, \hyperpage{21}
+  \item {Record}, \hyperpage{22}
+    \subitem {deserialize}, \hyperpage{23}
+    \subitem {field1}, \hyperpage{23}
+    \subitem {field2}, \hyperpage{23}
+    \subitem {field3}, \hyperpage{24}
+    \subitem {index}, \hyperpage{24}
+    \subitem {Record}, \hyperpage{22}
+    \subitem {serialize}, \hyperpage{23}
+  \item {Record.h}, \hyperpage{38}
   \item {records}
-    \subitem {Block}, \hyperpage{7}
+    \subitem {Block}, \hyperpage{8}
+  \item {recordsPerBlock}
+    \subitem {BPlusTree}, \hyperpage{19}
+  \item {rootRBN}
+    \subitem {BPlusTree}, \hyperpage{19}
 
   \indexspace
 
+  \item {search}
+    \subitem {BPlusTree}, \hyperpage{17}
   \item {serialize}
-    \subitem {Block}, \hyperpage{6}
-    \subitem {Record}, \hyperpage{11}
+    \subitem {Block}, \hyperpage{7}
+    \subitem {Record}, \hyperpage{23}
+  \item {setFilename}
+    \subitem {BlockBuffer}, \hyperpage{10}
+  \item {splitBlock}
+    \subitem {BPlusTree}, \hyperpage{18}
+
+  \indexspace
+
+  \item {totalBlocks}
+    \subitem {BPlusTree}, \hyperpage{19}
 
   \indexspace
 
   \item {unpack}
-    \subitem {Buffer}, \hyperpage{9}
+    \subitem {Buffer}, \hyperpage{21}
 
   \indexspace
 
   \item {writeBlocks}
-    \subitem {BlockBuffer}, \hyperpage{7}
+    \subitem {BlockBuffer}, \hyperpage{10}
   \item {writeHeader}
-    \subitem {Buffer}, \hyperpage{9}
+    \subitem {Buffer}, \hyperpage{21}
 
 \end{theindex}

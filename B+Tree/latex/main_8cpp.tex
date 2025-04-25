@@ -8,6 +8,7 @@
 {\ttfamily \#include "{}Block\+Buffer.\+h"{}}\newline
 {\ttfamily \#include "{}Block.\+h"{}}\newline
 {\ttfamily \#include "{}Record.\+h"{}}\newline
+{\ttfamily \#include "{}BPlus\+Tree.\+h"{}}\newline
 Include dependency graph for main.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -21,60 +22,170 @@ Include dependency graph for main.\+cpp\+:
 \item 
 vector$<$ string $>$ \mbox{\hyperlink{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5}{read\+CSV}} (const string \&filename)
 \begin{DoxyCompactList}\small\item\em Reads a CSV file (with a header) and returns a vector of CSV record strings. \end{DoxyCompactList}\item 
-vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \mbox{\hyperlink{main_8cpp_af24f251209bfddecf22c16b78504f440}{create\+Blocks}} (const vector$<$ string $>$ \&records, int records\+Per\+Block)
+vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \mbox{\hyperlink{main_8cpp_af24f251209bfddecf22c16b78504f440}{create\+Blocks}} (const vector$<$ string $>$ \&records, int records\+Per\+Block)
 \begin{DoxyCompactList}\small\item\em Creates blocks from CSV record strings. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539}{dump\+Physical}} (const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&blocks)
+void \mbox{\hyperlink{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539}{dump\+Physical}} (const vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&blocks)
 \begin{DoxyCompactList}\small\item\em Dump blocks in physical order (as stored in file). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{main_8cpp_a31997b301690ede4286dbc57baf7ceda}{dump\+Logical}} (const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&blocks)
+void \mbox{\hyperlink{main_8cpp_a31997b301690ede4286dbc57baf7ceda}{dump\+Logical}} (const vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&blocks)
 \begin{DoxyCompactList}\small\item\em Dump blocks in logical order (following next\+Block pointer). \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main entry point for the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{main_8cpp_af24f251209bfddecf22c16b78504f440}\label{main_8cpp_af24f251209bfddecf22c16b78504f440} 
-\index{main.cpp@{main.cpp}!createBlocks@{createBlocks}}
+\Hypertarget{main_8cpp_af24f251209bfddecf22c16b78504f440}\index{main.cpp@{main.cpp}!createBlocks@{createBlocks}}
 \index{createBlocks@{createBlocks}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{createBlocks()}{createBlocks()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ create\+Blocks (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{records,  }\item[{int}]{records\+Per\+Block }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8cpp_af24f251209bfddecf22c16b78504f440} 
+vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ create\+Blocks (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{records}{, }\item[{int}]{records\+Per\+Block}{}\end{DoxyParamCaption})}
 
 
 
 Creates blocks from CSV record strings. 
 
-\Hypertarget{main_8cpp_a31997b301690ede4286dbc57baf7ceda}\label{main_8cpp_a31997b301690ede4286dbc57baf7ceda} 
-\index{main.cpp@{main.cpp}!dumpLogical@{dumpLogical}}
+Splits the CSV records into fixed-\/sized blocks, with each block containing a specified maximum number of records. Each block is sequentially numbered.
+
+
+\begin{DoxyParams}{Parameters}
+{\em records} & A vector of CSV record strings to split into blocks. \\
+\hline
+{\em records\+Per\+Block} & The maximum number of records allowed in each block. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_block}{Block} objects containing the CSV records. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{main_8cpp_af24f251209bfddecf22c16b78504f440_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_a31997b301690ede4286dbc57baf7ceda}\index{main.cpp@{main.cpp}!dumpLogical@{dumpLogical}}
 \index{dumpLogical@{dumpLogical}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{dumpLogical()}{dumpLogical()}}
-{\footnotesize\ttfamily void dump\+Logical (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&}]{blocks }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8cpp_a31997b301690ede4286dbc57baf7ceda} 
+void dump\+Logical (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&}]{blocks}{}\end{DoxyParamCaption})}
 
 
 
 Dump blocks in logical order (following next\+Block pointer). 
 
-\Hypertarget{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539}\label{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539} 
-\index{main.cpp@{main.cpp}!dumpPhysical@{dumpPhysical}}
+Traverses the blocks starting from the first block and follows the {\ttfamily next\+Block} pointers to dump the logical structure of the blocks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocks} & A vector of \doxylink{class_block}{Block} objects to dump. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{main_8cpp_a31997b301690ede4286dbc57baf7ceda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539}\index{main.cpp@{main.cpp}!dumpPhysical@{dumpPhysical}}
 \index{dumpPhysical@{dumpPhysical}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{dumpPhysical()}{dumpPhysical()}}
-{\footnotesize\ttfamily void dump\+Physical (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $>$ \&}]{blocks }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539} 
+void dump\+Physical (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&}]{blocks}{}\end{DoxyParamCaption})}
 
 
 
 Dump blocks in physical order (as stored in file). 
 
-\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
-\index{main.cpp@{main.cpp}!main@{main}}
+Iterates through the provided blocks and prints their contents sequentially.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocks} & A vector of \doxylink{class_block}{Block} objects to dump. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{main_8cpp_ab1aff2e21bc4f5c9d7e3a8b9ac6d2539_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
 
-\Hypertarget{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5}\label{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5} 
-\index{main.cpp@{main.cpp}!readCSV@{readCSV}}
+
+
+Main entry point for the program. 
+
+Parses command-\/line flags, reads records from a CSV file, and generates a blocked sequence set and a B+ Tree. Also supports dumping the physical and logical structure of blocks.
+
+Command-\/line flags\+:
+\begin{DoxyItemize}
+\item {\ttfamily -\/-\/dump\+Physical}\+: Dumps the physical structure of the blocks.
+\item {\ttfamily -\/-\/dump\+Logical}\+: Dumps the logical structure of the blocks.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command-\/line arguments. \\
+\hline
+{\em argv} & The array of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An integer indicating the exit status of the program. 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Name of the CSV file to read.
+
+\texorpdfstring{$<$}{<} Name of the output file for blocks.
+
+\texorpdfstring{$<$}{<} Maximum records per block.
+
+\texorpdfstring{$<$}{<} Flag to indicate whether to dump physical structure.
+
+\texorpdfstring{$<$}{<} Flag to indicate whether to dump logical structure.
+
+\texorpdfstring{$<$}{<} \doxylink{class_block_buffer}{Block\+Buffer} instance to handle file I/O operations.
+
+\texorpdfstring{$<$}{<} Vector to store the blocks.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5}\index{main.cpp@{main.cpp}!readCSV@{readCSV}}
 \index{readCSV@{readCSV}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{readCSV()}{readCSV()}}
-{\footnotesize\ttfamily vector$<$ string $>$ read\+CSV (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5} 
+vector$<$ string $>$ read\+CSV (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
 
 
 
 Reads a CSV file (with a header) and returns a vector of CSV record strings. 
 
+Reads each line in the CSV file, skipping the header, and stores them in a vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings, each representing a record in the CSV file. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{main_8cpp_a5bea49b50ae035ca212ecd706ae082c5_icgraph}
+\end{center}
+\end{figure}

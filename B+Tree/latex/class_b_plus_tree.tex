@@ -1,0 +1,416 @@
+\doxysection{BPlus\+Tree Class Reference}
+\hypertarget{class_b_plus_tree}{}\label{class_b_plus_tree}\index{BPlusTree@{BPlusTree}}
+
+
+Represents a B+ Tree implementation.  
+
+
+
+
+{\ttfamily \#include $<$BPlus\+Tree.\+h$>$}
+
+
+
+Collaboration diagram for BPlus\+Tree\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_b_plus_tree__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_b_plus_tree_a63acd69d3cf5d5ea4a29cca5f768fe2d}{BPlus\+Tree}} (const std\+::string \&\mbox{\hyperlink{class_b_plus_tree_ae2da6f67c0ac4c80157cb1af95ad8fad}{filename}}, int \mbox{\hyperlink{class_b_plus_tree_acc33b0515e14e27f7cbed356fce2ddd1}{records\+Per\+Block}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_b_plus_tree}{BPlus\+Tree} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_plus_tree_a58f376bb1baa4b1ca7761c13e4a7baf9}{build\+Tree}} (const std\+::vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&blocks)
+\begin{DoxyCompactList}\small\item\em Constructs the B+ Tree hierarchy from a set of leaf blocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_plus_tree_ad7f3033a86483c667b22d0b2dbefb2c3}{insert}} (const \mbox{\hyperlink{class_record}{Record}} \&record)
+\begin{DoxyCompactList}\small\item\em Dynamically inserts a new record into the B+ Tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_plus_tree_a944b1186e993a47913501d8a1c6c0aed}{delete\+Record}} (int key)
+\begin{DoxyCompactList}\small\item\em Dynamically deletes a record from the B+ Tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_record}{Record}} \mbox{\hyperlink{class_b_plus_tree_acdad02be59d1f2fef8bcb02bcb7b3cc3}{search}} (int key)
+\begin{DoxyCompactList}\small\item\em Searches for a record by key in the B+ Tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_plus_tree_a700c0f10028db84b84dbc5ddc987d605}{dump\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Dumps the structure of the B+ Tree for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_b_plus_tree_a602ef49ca32b41d29655077a5271ba58}{create\+Index\+Level}} (const std\+::vector$<$ int $>$ \&keys, const std\+::vector$<$ int $>$ \&child\+RBNs)
+\begin{DoxyCompactList}\small\item\em Recursively creates index levels for the B+ Tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_plus_tree_aa973d380559282f5ff71893ceca80cbb}{split\+Block}} (\mbox{\hyperlink{class_block}{Block}} \&block, int parent\+RBN)
+\begin{DoxyCompactList}\small\item\em Splits a block on insertion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_plus_tree_ac5ad5b91753064b286350cb8c7d5d79e}{merge\+Blocks}} (\mbox{\hyperlink{class_block}{Block}} \&left\+Block, \mbox{\hyperlink{class_block}{Block}} \&right\+Block, int parent\+RBN)
+\begin{DoxyCompactList}\small\item\em Merges two blocks on deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_b_plus_tree_a451dd10a73f4cd55aa3704301a9c4c4d}{root\+RBN}}
+\begin{DoxyCompactList}\small\item\em Relative \doxylink{class_block}{Block} Number of the root block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_b_plus_tree_acc33b0515e14e27f7cbed356fce2ddd1}{records\+Per\+Block}}
+\begin{DoxyCompactList}\small\item\em Maximum number of records allowed per block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_b_plus_tree_a61c3333bc5f99dc65a54bbb678a0e96b}{total\+Blocks}}
+\begin{DoxyCompactList}\small\item\em Total number of blocks currently in the tree. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_b_plus_tree_ae2da6f67c0ac4c80157cb1af95ad8fad}{filename}}
+\begin{DoxyCompactList}\small\item\em Name of the file where the B+ Tree is stored. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_block_buffer}{Block\+Buffer}} \mbox{\hyperlink{class_b_plus_tree_a3c46cc57485542b5086460ed163faf4a}{buffer}}
+\begin{DoxyCompactList}\small\item\em Manages file I/O operations for blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a B+ Tree implementation. 
+
+Provides methods to construct, manage, and query a B+ Tree. This class handles file-\/based storage for scalability, supporting dynamic insertion, deletion, and search operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_plus_tree_a63acd69d3cf5d5ea4a29cca5f768fe2d}\index{BPlusTree@{BPlusTree}!BPlusTree@{BPlusTree}}
+\index{BPlusTree@{BPlusTree}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{BPlusTree()}{BPlusTree()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a63acd69d3cf5d5ea4a29cca5f768fe2d} 
+BPlus\+Tree\+::\+BPlus\+Tree (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{int}]{records\+Per\+Block}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_b_plus_tree}{BPlus\+Tree} class. 
+
+Initializes the B+ Tree using the specified file and record-\/per-\/block settings. Reads existing metadata from the file if available, or starts a new tree if not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file associated with the B+ Tree. \\
+\hline
+{\em records\+Per\+Block} & The maximum number of records allowed per block.\\
+\hline
+\end{DoxyParams}
+Initializes the B+ Tree from a file or starts a new tree if the file does not exist. The constructor attempts to read the file header to retrieve metadata such as {\ttfamily records\+Per\+Block}, {\ttfamily total\+Blocks}, and {\ttfamily root\+RBN}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file associated with the B+ Tree. \\
+\hline
+{\em records\+Per\+Block} & The maximum number of records allowed per block. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_plus_tree_a58f376bb1baa4b1ca7761c13e4a7baf9}\index{BPlusTree@{BPlusTree}!buildTree@{buildTree}}
+\index{buildTree@{buildTree}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{buildTree()}{buildTree()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a58f376bb1baa4b1ca7761c13e4a7baf9} 
+void BPlus\+Tree\+::build\+Tree (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_block}{Block}} $>$ \&}]{blocks}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the B+ Tree hierarchy from a set of leaf blocks. 
+
+Builds the B+ Tree from a set of leaf blocks.
+
+Writes all leaf blocks to the file and recursively creates index levels until the root node is formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocks} & A vector of leaf blocks to form the base of the tree.\\
+\hline
+\end{DoxyParams}
+Writes all leaf blocks to the file and constructs the hierarchical index levels to organize the tree. The root block number is updated after constructing the index levels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em blocks} & A vector of leaf blocks to form the base of the B+ Tree. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_b_plus_tree_a58f376bb1baa4b1ca7761c13e4a7baf9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{class_b_plus_tree_a58f376bb1baa4b1ca7761c13e4a7baf9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_b_plus_tree_a602ef49ca32b41d29655077a5271ba58}\index{BPlusTree@{BPlusTree}!createIndexLevel@{createIndexLevel}}
+\index{createIndexLevel@{createIndexLevel}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{createIndexLevel()}{createIndexLevel()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a602ef49ca32b41d29655077a5271ba58} 
+int BPlus\+Tree\+::create\+Index\+Level (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{keys}{, }\item[{const std\+::vector$<$ int $>$ \&}]{child\+RBNs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursively creates index levels for the B+ Tree. 
+
+Recursively creates hierarchical index levels for the B+ Tree.
+
+Aggregates keys and child block numbers into parent index blocks, continuing until a single root node is formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & A vector of keys representing the largest keys from child blocks. \\
+\hline
+{\em child\+RBNs} & A vector of Relative \doxylink{class_block}{Block} Numbers (RBNs) for the child blocks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The RBN of the root index block created.
+\end{DoxyReturn}
+Aggregates keys and block numbers from child blocks into parent index blocks. Continues building levels until a single root index block is formed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & A vector of keys representing the largest keys from child blocks. \\
+\hline
+{\em child\+RBNs} & A vector of Relative \doxylink{class_block}{Block} Numbers (RBNs) for the child blocks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The RBN of the root index block created. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_b_plus_tree_a602ef49ca32b41d29655077a5271ba58_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_b_plus_tree_a602ef49ca32b41d29655077a5271ba58_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_b_plus_tree_a944b1186e993a47913501d8a1c6c0aed}\index{BPlusTree@{BPlusTree}!deleteRecord@{deleteRecord}}
+\index{deleteRecord@{deleteRecord}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{deleteRecord()}{deleteRecord()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a944b1186e993a47913501d8a1c6c0aed} 
+void BPlus\+Tree\+::delete\+Record (\begin{DoxyParamCaption}\item[{int}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Dynamically deletes a record from the B+ Tree. 
+
+Removes the record with the specified key from the tree. Handles block underflows by merging blocks and updating the tree structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the record to delete. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_b_plus_tree_a700c0f10028db84b84dbc5ddc987d605}\index{BPlusTree@{BPlusTree}!dumpTree@{dumpTree}}
+\index{dumpTree@{dumpTree}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{dumpTree()}{dumpTree()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a700c0f10028db84b84dbc5ddc987d605} 
+void BPlus\+Tree\+::dump\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Dumps the structure of the B+ Tree for debugging purposes. 
+
+Traverses the tree and prints the contents of each block, starting from the root block.
+
+Traverses the tree and prints the contents of each block, starting from the root block. Displays both leaf and index blocks. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{class_b_plus_tree_a700c0f10028db84b84dbc5ddc987d605_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_b_plus_tree_a700c0f10028db84b84dbc5ddc987d605_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_b_plus_tree_ad7f3033a86483c667b22d0b2dbefb2c3}\index{BPlusTree@{BPlusTree}!insert@{insert}}
+\index{insert@{insert}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_ad7f3033a86483c667b22d0b2dbefb2c3} 
+void BPlus\+Tree\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_record}{Record}} \&}]{record}{}\end{DoxyParamCaption})}
+
+
+
+Dynamically inserts a new record into the B+ Tree. 
+
+Inserts a new record into the B+ Tree.
+
+Finds the appropriate leaf block for the new record and inserts it. Handles block overflows by splitting blocks and updating the tree structure as needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em record} & The record to be inserted into the tree.\\
+\hline
+\end{DoxyParams}
+Finds the appropriate leaf block for the new record and inserts it. Handles overflow by splitting blocks as necessary and updating the parent blocks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em record} & The record to be inserted into the tree. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_b_plus_tree_ad7f3033a86483c667b22d0b2dbefb2c3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_b_plus_tree_ac5ad5b91753064b286350cb8c7d5d79e}\index{BPlusTree@{BPlusTree}!mergeBlocks@{mergeBlocks}}
+\index{mergeBlocks@{mergeBlocks}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{mergeBlocks()}{mergeBlocks()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_ac5ad5b91753064b286350cb8c7d5d79e} 
+void BPlus\+Tree\+::merge\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_block}{Block}} \&}]{left\+Block}{, }\item[{\mbox{\hyperlink{class_block}{Block}} \&}]{right\+Block}{, }\item[{int}]{parent\+RBN}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Merges two blocks on deletion. 
+
+When a block underflows, its records are merged with a sibling block. Updates the parent block to reflect the merged structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Block} & The left sibling block. \\
+\hline
+{\em right\+Block} & The right sibling block. \\
+\hline
+{\em parent\+RBN} & The RBN of the parent block. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_b_plus_tree_acdad02be59d1f2fef8bcb02bcb7b3cc3}\index{BPlusTree@{BPlusTree}!search@{search}}
+\index{search@{search}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_acdad02be59d1f2fef8bcb02bcb7b3cc3} 
+\mbox{\hyperlink{class_record}{Record}} BPlus\+Tree\+::search (\begin{DoxyParamCaption}\item[{int}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Searches for a record by key in the B+ Tree. 
+
+Traverses the tree to locate the record with the specified key, starting from the root block.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The record associated with the key, or an empty record if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_b_plus_tree_aa973d380559282f5ff71893ceca80cbb}\index{BPlusTree@{BPlusTree}!splitBlock@{splitBlock}}
+\index{splitBlock@{splitBlock}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{splitBlock()}{splitBlock()}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_aa973d380559282f5ff71893ceca80cbb} 
+void BPlus\+Tree\+::split\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_block}{Block}} \&}]{block}{, }\item[{int}]{parent\+RBN}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Splits a block on insertion. 
+
+Splits an overflowing block into two balanced blocks.
+
+When a block overflows, its records are redistributed into two balanced blocks. Handles updates to parent blocks or creates a new root block if needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The overflowing block to split. \\
+\hline
+{\em parent\+RBN} & The RBN of the parent block, or -\/1 if the block has no parent.\\
+\hline
+\end{DoxyParams}
+When a block overflows, its records are redistributed into a new block, maintaining the balance of the B+ Tree. If there is no parent block, a new root is created to reference the split blocks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & The overflowing block that needs to be split. \\
+\hline
+{\em parent\+RBN} & The Relative \doxylink{class_block}{Block} Number (RBN) of the parent block, or -\/1 if no parent exists. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{class_b_plus_tree_aa973d380559282f5ff71893ceca80cbb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_b_plus_tree_aa973d380559282f5ff71893ceca80cbb_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_b_plus_tree_a3c46cc57485542b5086460ed163faf4a}\index{BPlusTree@{BPlusTree}!buffer@{buffer}}
+\index{buffer@{buffer}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a3c46cc57485542b5086460ed163faf4a} 
+\mbox{\hyperlink{class_block_buffer}{Block\+Buffer}} BPlus\+Tree\+::buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manages file I/O operations for blocks. 
+
+\Hypertarget{class_b_plus_tree_ae2da6f67c0ac4c80157cb1af95ad8fad}\index{BPlusTree@{BPlusTree}!filename@{filename}}
+\index{filename@{filename}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_ae2da6f67c0ac4c80157cb1af95ad8fad} 
+std\+::string BPlus\+Tree\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the file where the B+ Tree is stored. 
+
+\Hypertarget{class_b_plus_tree_acc33b0515e14e27f7cbed356fce2ddd1}\index{BPlusTree@{BPlusTree}!recordsPerBlock@{recordsPerBlock}}
+\index{recordsPerBlock@{recordsPerBlock}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{recordsPerBlock}{recordsPerBlock}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_acc33b0515e14e27f7cbed356fce2ddd1} 
+int BPlus\+Tree\+::records\+Per\+Block\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum number of records allowed per block. 
+
+\Hypertarget{class_b_plus_tree_a451dd10a73f4cd55aa3704301a9c4c4d}\index{BPlusTree@{BPlusTree}!rootRBN@{rootRBN}}
+\index{rootRBN@{rootRBN}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{rootRBN}{rootRBN}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a451dd10a73f4cd55aa3704301a9c4c4d} 
+int BPlus\+Tree\+::root\+RBN\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Relative \doxylink{class_block}{Block} Number of the root block. 
+
+\Hypertarget{class_b_plus_tree_a61c3333bc5f99dc65a54bbb678a0e96b}\index{BPlusTree@{BPlusTree}!totalBlocks@{totalBlocks}}
+\index{totalBlocks@{totalBlocks}!BPlusTree@{BPlusTree}}
+\doxysubsubsection{\texorpdfstring{totalBlocks}{totalBlocks}}
+{\footnotesize\ttfamily \label{class_b_plus_tree_a61c3333bc5f99dc65a54bbb678a0e96b} 
+int BPlus\+Tree\+::total\+Blocks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total number of blocks currently in the tree. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_b_plus_tree_8h}{BPlus\+Tree.\+h}}\item 
+\mbox{\hyperlink{_b_plus_tree_8cpp}{BPlus\+Tree.\+cpp}}\end{DoxyCompactItemize}

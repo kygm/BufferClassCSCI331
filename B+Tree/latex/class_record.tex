@@ -1,0 +1,125 @@
+\doxysection{Record Class Reference}
+\hypertarget{class_record}{}\label{class_record}\index{Record@{Record}}
+
+
+{\ttfamily \#include $<$Record.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_record_ae8ee53ffec6ff4dac9911517d47e86a5}{Record}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_record_a919b704485cb09755c12e77ba9fa9ec0}{serialize}} () const
+\begin{DoxyCompactList}\small\item\em Serializes the record as a CSV string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_record}{Record}} \mbox{\hyperlink{class_record_ad399872ad3346031a4738b54f60730f5}{deserialize}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Deserializes a CSV string into a \doxylink{class_record}{Record}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_record_a2935aa5cf22eec60869e4b521bb8de23}{index}}
+\item 
+std\+::string \mbox{\hyperlink{class_record_a0afb9d31f0aac6a64c6ef9324ea7fe60}{field1}}
+\item 
+std\+::string \mbox{\hyperlink{class_record_a12bf9c69fb2b0c5ef504935bfd64fa17}{field2}}
+\item 
+std\+::string \mbox{\hyperlink{class_record_a7b06ca5c80b2ab9e7248b1a98ae3d09c}{field3}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_record_ae8ee53ffec6ff4dac9911517d47e86a5}\index{Record@{Record}!Record@{Record}}
+\index{Record@{Record}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{Record()}{Record()}}
+{\footnotesize\ttfamily \label{class_record_ae8ee53ffec6ff4dac9911517d47e86a5} 
+Record\+::\+Record (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_record_ae8ee53ffec6ff4dac9911517d47e86a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_record_ad399872ad3346031a4738b54f60730f5}\index{Record@{Record}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_record_ad399872ad3346031a4738b54f60730f5} 
+static \mbox{\hyperlink{class_record}{Record}} Record\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Deserializes a CSV string into a \doxylink{class_record}{Record}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The CSV string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{class_record}{Record} object. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_record_ad399872ad3346031a4738b54f60730f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_record_ad399872ad3346031a4738b54f60730f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_record_a919b704485cb09755c12e77ba9fa9ec0}\index{Record@{Record}!serialize@{serialize}}
+\index{serialize@{serialize}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_record_a919b704485cb09755c12e77ba9fa9ec0} 
+std\+::string Record\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serializes the record as a CSV string. 
+
+Format\+: index,field1,field2,field3 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_record_a0afb9d31f0aac6a64c6ef9324ea7fe60}\index{Record@{Record}!field1@{field1}}
+\index{field1@{field1}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{field1}{field1}}
+{\footnotesize\ttfamily \label{class_record_a0afb9d31f0aac6a64c6ef9324ea7fe60} 
+std\+::string Record\+::field1}
+
+\Hypertarget{class_record_a12bf9c69fb2b0c5ef504935bfd64fa17}\index{Record@{Record}!field2@{field2}}
+\index{field2@{field2}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{field2}{field2}}
+{\footnotesize\ttfamily \label{class_record_a12bf9c69fb2b0c5ef504935bfd64fa17} 
+std\+::string Record\+::field2}
+
+\Hypertarget{class_record_a7b06ca5c80b2ab9e7248b1a98ae3d09c}\index{Record@{Record}!field3@{field3}}
+\index{field3@{field3}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{field3}{field3}}
+{\footnotesize\ttfamily \label{class_record_a7b06ca5c80b2ab9e7248b1a98ae3d09c} 
+std\+::string Record\+::field3}
+
+\Hypertarget{class_record_a2935aa5cf22eec60869e4b521bb8de23}\index{Record@{Record}!index@{index}}
+\index{index@{index}!Record@{Record}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily \label{class_record_a2935aa5cf22eec60869e4b521bb8de23} 
+int Record\+::index}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_record_8h}{Record.\+h}}\end{DoxyCompactItemize}

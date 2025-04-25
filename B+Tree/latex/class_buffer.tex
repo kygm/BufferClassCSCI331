@@ -1,0 +1,133 @@
+\doxysection{Buffer Class Reference}
+\hypertarget{class_buffer}{}\label{class_buffer}\index{Buffer@{Buffer}}
+
+
+{\ttfamily \#include $<$Buffer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_buffer_a6836a37494e3ad9644545bc6cd29cbbe}{pack}} (const std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Packs a string into a length-\/indicated format. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_buffer_a6a27aa54d36921c5d1df772f5188fbe9}{unpack}} ()
+\begin{DoxyCompactList}\small\item\em Unpacks the string (ignores the length indicator). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buffer_aca102ffdc3b1361df546c4b392ced5a3}{read\+Header}} (std\+::ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Reads the header record from the input file stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buffer_a19ff8d9cac721713de36b815929e0811}{write\+Header}} (std\+::ofstream \&file)
+\begin{DoxyCompactList}\small\item\em Writes the header record to the output file stream. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_buffer_a6b2613034a5a4a2261cc926bf47c105d}{get\+Buffer}} () const
+\begin{DoxyCompactList}\small\item\em Returns the internal packed string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_buffer_a2ba9f070ca44b52cb5d9abe5643b5903}{buffer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_buffer_a6b2613034a5a4a2261cc926bf47c105d}\index{Buffer@{Buffer}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{getBuffer()}{getBuffer()}}
+{\footnotesize\ttfamily \label{class_buffer_a6b2613034a5a4a2261cc926bf47c105d} 
+std\+::string Buffer\+::get\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the internal packed string. 
+
+\begin{DoxyReturn}{Returns}
+The packed string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_buffer_a6b2613034a5a4a2261cc926bf47c105d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_buffer_a6836a37494e3ad9644545bc6cd29cbbe}\index{Buffer@{Buffer}!pack@{pack}}
+\index{pack@{pack}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{pack()}{pack()}}
+{\footnotesize\ttfamily \label{class_buffer_a6836a37494e3ad9644545bc6cd29cbbe} 
+void Buffer\+::pack (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Packs a string into a length-\/indicated format. 
+
+Example\+: "{}\+Hello"{} becomes "{}5,\+Hello"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The string to pack. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_buffer_a6836a37494e3ad9644545bc6cd29cbbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_buffer_aca102ffdc3b1361df546c4b392ced5a3}\index{Buffer@{Buffer}!readHeader@{readHeader}}
+\index{readHeader@{readHeader}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{readHeader()}{readHeader()}}
+{\footnotesize\ttfamily \label{class_buffer_aca102ffdc3b1361df546c4b392ced5a3} 
+void Buffer\+::read\+Header (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Reads the header record from the input file stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The input stream. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_buffer_a6a27aa54d36921c5d1df772f5188fbe9}\index{Buffer@{Buffer}!unpack@{unpack}}
+\index{unpack@{unpack}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily \label{class_buffer_a6a27aa54d36921c5d1df772f5188fbe9} 
+std\+::string Buffer\+::unpack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unpacks the string (ignores the length indicator). 
+
+Unpacks a length-\/indicated string from the buffer.
+
+\begin{DoxyReturn}{Returns}
+The original string. 
+\end{DoxyReturn}
+\Hypertarget{class_buffer_a19ff8d9cac721713de36b815929e0811}\index{Buffer@{Buffer}!writeHeader@{writeHeader}}
+\index{writeHeader@{writeHeader}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{writeHeader()}{writeHeader()}}
+{\footnotesize\ttfamily \label{class_buffer_a19ff8d9cac721713de36b815929e0811} 
+void Buffer\+::write\+Header (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Writes the header record to the output file stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The output stream. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_buffer_a2ba9f070ca44b52cb5d9abe5643b5903}\index{Buffer@{Buffer}!buffer@{buffer}}
+\index{buffer@{buffer}!Buffer@{Buffer}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{class_buffer_a2ba9f070ca44b52cb5d9abe5643b5903} 
+std\+::string Buffer\+::buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_buffer_8h}{Buffer.\+h}}\item 
+\mbox{\hyperlink{_buffer_8cpp}{Buffer.\+cpp}}\end{DoxyCompactItemize}

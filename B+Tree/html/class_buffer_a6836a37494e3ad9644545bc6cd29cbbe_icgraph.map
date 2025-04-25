@@ -1,0 +1,9 @@
+<map id="Buffer::pack" name="Buffer::pack">
+<area shape="rect" id="Node000001" title="Packs a string into a length&#45;indicated format." alt="" coords="315,31,406,57"/>
+<area shape="rect" id="Node000002" href="$class_block.html#a9b763f9cd785606584f98f949eb29aa3" title="Serializes the block to a string." alt="" coords="130,5,240,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,38,240,29,241,24,300,33"/>
+<area shape="rect" id="Node000003" href="$class_block_buffer.html#a74899c7f817a3d9ae51f2e008c057046" title="Writes a blocked sequence set file." alt="" coords="103,56,267,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="300,55,268,60,267,55,299,50"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the program." alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
+</map>

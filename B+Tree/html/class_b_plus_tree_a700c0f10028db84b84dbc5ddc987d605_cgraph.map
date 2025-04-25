@@ -1,0 +1,5 @@
+<map id="BPlusTree::dumpTree" name="BPlusTree::dumpTree">
+<area shape="rect" id="Node000001" title="Dumps the structure of the B+ Tree for debugging purposes." alt="" coords="5,5,154,32"/>
+<area shape="rect" id="Node000002" href="$class_block.html#aff70cf68ccbef55cdf18e38060922622" title="Dumps the block content to standard output." alt="" coords="202,5,296,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>

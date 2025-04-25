@@ -1,0 +1,6 @@
+<map id="BPlusTree::insert" name="BPlusTree::insert">
+<area shape="rect" id="Node000001" title="Dynamically inserts a new record into the B+ Tree." alt="" coords="5,29,128,56"/>
+<area shape="rect" id="Node000002" href="$class_b_plus_tree.html#aa973d380559282f5ff71893ceca80cbb" title="Splits a block on insertion." alt="" coords="176,29,323,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,40,160,40,160,45,128,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="218,30,212,21,216,11,229,5,249,3,271,5,283,12,280,16,270,10,249,8,230,10,220,15,218,20,223,28"/>
+</map>

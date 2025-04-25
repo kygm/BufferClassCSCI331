@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['record_0', ['Record', ['../classRecord.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['record_0',['Record',['../class_record.html',1,'']]]
+];

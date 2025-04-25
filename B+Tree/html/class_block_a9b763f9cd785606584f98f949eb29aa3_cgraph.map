@@ -1,0 +1,7 @@
+<map id="Block::serialize" name="Block::serialize">
+<area shape="rect" id="Node000001" title="Serializes the block to a string." alt="" coords="5,31,116,57"/>
+<area shape="rect" id="Node000002" href="$class_buffer.html#a6b2613034a5a4a2261cc926bf47c105d" title="Returns the internal packed string." alt="" coords="164,5,279,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,33,148,28,149,33,117,38"/>
+<area shape="rect" id="Node000003" href="$class_buffer.html#a6836a37494e3ad9644545bc6cd29cbbe" title="Packs a string into a length&#45;indicated format." alt="" coords="176,56,267,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,50,161,57,160,62,116,55"/>
+</map>
